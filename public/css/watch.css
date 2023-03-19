@@ -1,0 +1,159 @@
+iframe {
+    overflow-clip-margin: content-box !important;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    overflow: clip !important;
+}
+.main-contents {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+.button-watch {
+    clear: both;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.button-watch ul {
+    padding-right: 0;
+    margin-bottom: 0;
+}
+.halim-social-plugin {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+}
+.halim-social-plugin li {
+    float: left;
+    margin-right: 5px;
+}
+.button-watch .col-md-8 {
+    text-align: right;
+    margin-bottom: 0;
+}
+.button-watch ul {
+    padding-right: 0;
+    margin-bottom: 0;
+}
+.button-watch #explayer, .button-watch #likeplayer, .button-watch #report, .button-watch #toggle-light, .button-watch .luotxem, .button-watch #download, .button-watch #autonext {
+    font-size: 11px;
+    display: inline-block;
+    height: 24px;
+    line-height: 17px;
+    border-radius: 50px!important;
+    cursor: pointer;
+    padding: 4px 5px;
+}
+.luotxem a {
+    color: #adadad;
+}
+.visible-xs-inline{
+    display: none !important;
+}
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+.title-block {
+    background: rgba(54,71,86,.13);
+    padding: 15px 15px 0;
+    overflow: hidden;
+}
+.title-wrapper-xem {
+    float: left;
+    width: 50%;
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #40474e;
+}
+ .film-title {
+    font-size: 24px;
+    margin: 0;
+}
+ .film-title a {
+    color: #bdbdbd;
+    line-height: 35px;
+}
+.text-center {
+    text-align: center;
+}
+#halim-ajax-list-server {
+    margin: 10px 5px;
+}
+#halim-list-server {
+    margin-top: 15px;
+}
+#halim-list-server ul {
+    padding: 0;
+    list-style: none;
+}
+.nav-tabs {
+    border-bottom: 1px solid #263a4c;
+}
+#halim-list-server ul.nav-tabs li.active {
+    background: #263a4c;
+}
+#halim-list-server ul.nav-tabs li {
+    margin: 0;
+}
+#halim-list-server li {
+    display: inline-block;
+    margin: 0 3px 10px 0;
+    padding: 5px;
+}
+#halim-list-server ul.nav-tabs li.active a {
+    margin: 0;
+    border: none;
+    padding: 7px 12px;
+}
+.tab-content>.active {
+    display: block;
+}
+#halim-list-server .tab-content ul {
+    margin: 0;
+    padding: 15px 0;
+}
+#halim-list-server li {
+    display: inline-block;
+    margin: 0 3px 10px 0;
+}
+#halim-list-server ul li span.active {
+    background: #e46565;
+}
+#halim-list-server ul li span {
+    background: #1f2c3e;
+    padding: 7.5px 10px;
+    border-radius: 3px;
+    transition: .6s all;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+.box-shadow {
+    text-shadow: 0 1px 0 rgb(0 0 0 / 50%);
+    box-shadow: inset 0 1px 1px rgb(255 255 255 / 7%), 0 1px 3px rgb(0 0 0 / 29%);
+}
+.htmlwrap {
+    padding: 15px;
+    border: 1px solid #1d2731;
+    margin: 10px 0;
+    background: transparent;
+    font-size: 14px;
+}
+#lightout {
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: .95;
+    filter: alpha(opacity=95);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
