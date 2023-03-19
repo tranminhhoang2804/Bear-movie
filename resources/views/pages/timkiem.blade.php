@@ -1,9 +1,10 @@
 @extends('welcome')
-@section('content')
+@section('content')	
+
 <div class="panel-heading container p-2">
             <div class="row">
             <div class="col-xs-6">
-                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light">Thể loại » <a class="panel-heading-title text-light fw-bold" href="">{{$genre_slug->title}}</a></span></span></div>
+                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light">Danh mục » <a class="panel-heading-title text-light fw-bold" href="">{{$search}}</a></span></span></div>
             </div>
             </div>
         </div>
@@ -11,7 +12,7 @@
             <section id="halim-advanced-widget-4">
                <div class="section-heading mt-2 mb-2 p-2">
                   <a href="#" title="Phim Chiếu Rạp">
-                  <span class="fw-bolder text-warning">{{$genre_slug->title}}</span>
+                  <span class="fw-bolder text-warning">{{$search}}</span>
                   </a>
                </div>
                 <div class="halim-box row">
@@ -68,5 +69,5 @@
                 <a class="page-link bg-warning text-dark fw-bold" href="#">Next</a>
               </li>
             </ul>
-        </nav>         
+        </nav>          
 @endsection

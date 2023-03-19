@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Genre;
 use App\Models\Country;
 use Carbon\Carbon;
+use File;
 class MovieController extends Controller
 {
     /**
@@ -17,7 +18,15 @@ class MovieController extends Controller
      */
     public function index()
     {
-         //
+         $list = Movie::with('category','movie_genre','genre','country')->orderBy('id','DESC')->get();
+
+         $destinationPath = public_path()."/json_file/";
+         if(!is_dir($destinationPath)) {
+            mkdir($destinationPath,0777,true);
+         }
+         File::put($destinationPath.'movie.json',json_encode($list));
+
+        return view('admincp.movie.index', compact('list'));
     }
 
     public function update_year(Request $request) {
@@ -37,8 +46,7 @@ class MovieController extends Controller
         $genre = Genre::pluck('title','id');
         $list_genre = Genre::all();
         $country = Country::pluck('title','id');
-        $list = Movie::with('category','movie_genre','genre','country')->orderBy('id','DESC')->get();
-        return view('admincp.movie.form', compact('list','category','genre','country','list_genre'));
+        return view('admincp.movie.form', compact('category','genre','country','list_genre'));
     }
 
     /**
@@ -83,7 +91,7 @@ class MovieController extends Controller
         $movie->save();
         //them nhieu the loai//
         $movie->movie_genre()->attach($data['genre']);
-        return redirect()->back();
+        return redirect()->route('movie.index');
     }
 
     /**
@@ -109,9 +117,9 @@ class MovieController extends Controller
         $genre = Genre::pluck('title','id');
         $list_genre = Genre::all();
         $country = Country::pluck('title','id');
-        $list = Movie::with('category','movie_genre','country')->orderBy('id','DESC')->get();
         $movie =  Movie::find($id);
-        return view('admincp.movie.form', compact('list','category','genre','country','movie','list_genre'));
+        $movie_genre = $movie->movie_genre;
+        return view('admincp.movie.form', compact('category','genre','country','movie','list_genre','movie_genre'));
     }
 
     /**
@@ -160,7 +168,7 @@ class MovieController extends Controller
         }
         $movie->save();
         $movie->movie_genre()->sync($data['genre']);
-        return redirect()->back();
+        return redirect()->route('movie.index');
     }
 
     /**

@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
+                <a href="{{route('movie.index')}}" class="btn btn-primary">All Movie</a>
                 <div class="card-header">Quản lý phim</div>
 
                 <div class="card-body">
@@ -68,7 +69,7 @@
                         <!-- {!! Form::select('genre_id',$genre, isset($movie) ? $movie->genre_id : '' , ['class'=>'form-control']) !!} -->
                         @foreach($list_genre as $key => $gen)
                             @if(isset($movie))
-                        {!! Form::checkbox('genre[]', $gen->id, $movie->genre_id==$gen->id ? 'checked' : '') !!}
+                        {!! Form::checkbox('genre[]', $gen->id, isset($movie_genre) && $movie_genre->contains($gen->id) ? true : false) !!}
                             @else
                         {!! Form::checkbox('genre[]', $gen->id, '') !!}
                             @endif
@@ -99,104 +100,6 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-            <table class="table" id="tablephim">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Tên phim</th>
-                      <th scope="col">Tags phim</th>
-                      <th scope="col">thời lượng phim</th>
-                      <th scope="col">Hình ảnh</th>
-                      <th scope="col">Phim hot</th>
-                      <th scope="col">Định dạng</th>
-                      <th scope="col">Phụ đề</th>
-                      <!-- <th scope="col">Mô tả</th> -->
-                      <th scope="col">Slug</th>
-                      <th scope="col">Active</th>
-                      <th scope="col">Category</th>
-                      <th scope="col">Genre</th>
-                      <th scope="col">Country</th>
-                      <th scope="col">Ngay tao</th>
-                      <th scope="col">Ngay cap nhat</th>
-                      <th scope="col">Year</th>
-                      <th scope="col">Manage</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach($list as $key => $cate)
-                    <tr>
-                      <th scope="row">{{$key}}</th>
-                      <td>{{$cate->title}}</td>
-                      <td>{{$cate->tags}}</td>
-                      <td>{{$cate->thoiluong}}</td>
-                       <td><img width="200px" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
-                       <td>
-                          @if($cate->phim_hot==0)
-                            Khong
-                          @else
-                            Co
-                          @endif
-                      </td>
-                       <td>
-                        @if($cate->resolution==0)
-                            HD
-                        @elseif($cate->resolution==1)
-                            SD
-                        @elseif($cate->resolution==2)
-                            HDCam
-                        @elseif($cate->resolution==3)
-                            Cam
-                        @elseif($cate->resolution==4)
-                            FullHD
-                        @else
-                            Trailer
-                        @endif
-                       </td>
-                       <td>
-                        @if($cate->phude==0)
-                            Vietsub
-                        @else
-                            Thuyết minh
-                        @endif
-                       </td>
-                      <!-- <td>{{$cate->description}}</td> -->
-                      <td>{{$cate->slug}}</td>
-                      <td>
-                          @if($cate->status)
-                            Hiển thị
-                          @else
-                            Ẩn
-                          @endif
-                      </td>
-                      <td>{{$cate->category->title}}</td>
-                      
-                      <td>
-                        @foreach($cate->movie_genre as $gen)
-                        {{$gen->title}}
-                        @endforeach
-                      </td>
-                      
-                      <td>{{$cate->country->title}}</td>
-                      <td>{{$cate->ngaytao}}</td>
-                      <td>{{$cate->ngaycapnhat}}</td>
-                      <td>
-                          {!! Form::selectYear('year',2000,2023, isset($cate->year) ? $cate->year : '' ,['class'=>'select-year','id'=>$cate->id]) !!}
-                      </td>
-                      <td>
-                          {!! Form::open([
-                            'method'=>'DELETE',
-                            'route'=>['movie.destroy',$cate->id],
-                            'onsubmit'=>'return confirm("Delete?")'
-                          ]) !!}
-                          {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
-
-                          {!! Form::close() !!}
-                          <a href="{{route('movie.edit',$cate->id)}}" class="btn btn-warning">Edit</a>
-                      </td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-            </table>
         </div>
     </div>
 </div>

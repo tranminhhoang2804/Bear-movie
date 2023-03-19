@@ -20,10 +20,11 @@
             <nav class="navbar navbar-expand-lg movie-header sticky-top">
                 <div class="container">
                     <a class="navbar-brand col-3" href="{{route('homepage')}}"><img class="bear-logo img-thumbnail" src="{{asset('img/bear_logo.jpg')}}" title="Bear movie"><img class="bear-footer" src="{{asset('img/bear-footer.png')}}" title="Bear movie"></a>
-                    <form class="d-flex col-5 gap-2" role="search">
-                        <input class="form-control" type="search"
-                            placeholder="Search" aria-label="Search">
-                        <button class="btn btn-warning text-dark fw-bold"
+                    <form class="d-flex col-5 gap-2" action="{{route('tim-kiem')}}" method="GET">
+                        <input class="form-control" id="timkiem" type="text" name="search" 
+                            placeholder="Search" autocomplete="off">
+                            <ul class="list-group" id="result" style="display: none;"></ul>
+                        <button class="btn btn-warning text-dark fw-bold" name="search" 
                             type="submit">Search</button>
                     </form>
                     <ul class="navbar-nav d-flex justify-content-end col-1 gap-2">
@@ -49,7 +50,7 @@
                         <ul class="dropdown-content">
                         	@foreach($genre as $key => $gen)
                         		<li>
-                        			<a class="text-warning" href="#" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
+                        			<a class="text-warning" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
                         		</li>
                         	@endforeach
                         </ul>
@@ -127,9 +128,35 @@
 
 		</div> <!-- #site-content -->
 
-		<script type="text/javascript" src="{{asset("js/bootstrap.min.js")}}"></script>		
-		<script type="text/javascript" src="{{asset("js/owl.carousel.min.js")}}"></script>
-		<script type="text/javascript" src="{{asset("js/halimtheme-core.min.js")}}"></script>
+		<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>		
+		<script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('js/halimtheme-core.min.js')}}"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#timkiem').keyup(function(){
+                    $('#result').html('');
+                    var search = $('#timkiem').val();
+                    if(search!=''){
+                        var expression = new RegExp(search,"i");
+                            $.getJSON('/json_file/movie.json',function(data){
+                                $.each(data, function(key,value){
+                                    if (value.title.search(expression) != -1 || value.description.search(expression) != -1) {
+                                        $('#result').css('display','inherit');
+                                        $('#result').append('<li style="cursor:pointer" class="list-group-item link-class"><img src="/uploads/movie/' + value.image+'"height="40" width="40" class=""/>' + value.title + '<br> -> <span class="text-muted">'+value.description+'</span></li>');
+                                    }
+                                });
+                            });
+                    }else {
+                        $('#result').css('display','none');
+                    }
+                })
+                $('#result').on('click','li', function() {
+                    var click_text = $(this).text().split('->');
+                    $('#timkiem').val($.trim(click_text[0]));
+                    $('#result').html('');
+                });
+            })
+        </script>
 		<script type="text/javascript">
             $(".watch_trailer").click(function(e) {
                 e.preventDefault();

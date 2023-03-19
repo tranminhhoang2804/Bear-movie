@@ -31,6 +31,7 @@ Route::get('/episode',[IndexController::class, 'episode'])->name('episode');
 Route::get('/login',[IndexController::class, 'login'])->name('login');
 Route::get('/nam/{year}',[IndexController::class, 'year']);
 Route::get('/tag/{tag}',[IndexController::class, 'tag']);
+Route::get('/tim-kiem',[IndexController::class, 'timkiem'])->name('tim-kiem');
 
 Auth::routes();
 
