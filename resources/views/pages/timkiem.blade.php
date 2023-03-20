@@ -4,7 +4,7 @@
 <div class="panel-heading container p-2">
             <div class="row">
             <div class="col-xs-6">
-                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light">Danh mục » <a class="panel-heading-title text-light fw-bold" href="">{{$search}}</a></span></span></div>
+                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light"><a class="panel-heading-title text-light fw-bold" href="">{{$search}}</a></span></span></div>
             </div>
             </div>
         </div>
@@ -19,8 +19,8 @@
                 	@foreach($movie as $key => $mov)
                     <article class="col-md-2 col-sm-4 col-xs-6">
                         <div class="halim-item">
-                        <a class="halim-thumb" href="{{route('movie',$mov->slug)}}" title="{{$mov->title}}">
-                            <figure><img class="lazy card-img-top" src="{{asset('uploads/movie/'.$mov->image)}}" alt="gallery 2"></figure>
+                        <a class="halim-thumb" href="{{route('movie',$mov->slug)}}">
+                            <figure><img class="lazy card-img-top" src="{{asset('uploads/movie/'.$mov->image)}}" alt="{{$mov->title}}" title="{{$mov->title}}"></figure>
                             <span class="status">
 											@if($mov->resolution==0)
 					                            HD

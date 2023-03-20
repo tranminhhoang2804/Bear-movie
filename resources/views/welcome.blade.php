@@ -20,13 +20,29 @@
             <nav class="navbar navbar-expand-lg movie-header sticky-top">
                 <div class="container">
                     <a class="navbar-brand col-3" href="{{route('homepage')}}"><img class="bear-logo img-thumbnail" src="{{asset('img/bear_logo.jpg')}}" title="Bear movie"><img class="bear-footer" src="{{asset('img/bear-footer.png')}}" title="Bear movie"></a>
-                    <form class="d-flex col-5 gap-2" action="{{route('tim-kiem')}}" method="GET">
-                        <input class="form-control" id="timkiem" type="text" name="search" 
-                            placeholder="Search" autocomplete="off">
-                            <ul class="list-group" id="result" style="display: none;"></ul>
-                        <button class="btn btn-warning text-dark fw-bold" name="search" 
-                            type="submit">Search</button>
-                    </form>
+                    <div class="col-5">
+                        <style type="text/css">
+                            ul#result {
+                                position: absolute;
+                                z-index: 9999;
+                                background: #1b2d3c;
+                                width: 90%;
+                                padding: 10px;
+                                margin: 1px;
+                            }
+                        </style>
+                        <div class="form-group form-timkiem">
+                            <div class="input-group col-xs-12">
+                                <form action="{{route('tim-kiem')}}" method="GET" class="d-flex justify-content-center">
+                                <input type="text" name="search" id="timkiem" class="form-control" placeholder="tim kiem phim..." autocomplete="off">
+                                <button class="btn btn-warning text-dark fw-bold">Search</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <ul class="list-group" id="result" style="display: none;"></ul>
+
+                    </div>
                     <ul class="navbar-nav d-flex justify-content-end col-1 gap-2">
                         <li class="nav-item">
                             <a class="nav-link bg-warning rounded-circle fw-bold text-dark" href="{{route('login')}}"><span style="font-size: 1.3rem;">&#129333;</span></a>
@@ -137,21 +153,21 @@
                     $('#result').html('');
                     var search = $('#timkiem').val();
                     if(search!=''){
+                        $('#result').css('display','inherit');
                         var expression = new RegExp(search,"i");
-                            $.getJSON('/json_file/movie.json',function(data){
+                        $.getJSON('/json/movies.json',function(data){
                                 $.each(data, function(key,value){
-                                    if (value.title.search(expression) != -1 || value.description.search(expression) != -1) {
-                                        $('#result').css('display','inherit');
-                                        $('#result').append('<li style="cursor:pointer" class="list-group-item link-class"><img src="/uploads/movie/' + value.image+'"height="40" width="40" class=""/>' + value.title + '<br> -> <span class="text-muted">'+value.description+'</span></li>');
+                                    if (value.title.search(expression) != -1) {
+                                        $('#result').append('<li class="list-group-item" style="cursor:pointer"><img height="40" width="40" src="/uploads/movie/'+value.image+'">'+value.title+'<br/> | <span>'+value.description+'</span></li>');
                                     }
                                 });
-                            });
-                    }else {
-                        $('#result').css('display','none');
-                    }
-                })
+                            })
+                        }else {
+                            $('#result').css('display','none');
+                        }
+                    })
                 $('#result').on('click','li', function() {
-                    var click_text = $(this).text().split('->');
+                    var click_text = $(this).text().split('|');
                     $('#timkiem').val($.trim(click_text[0]));
                     $('#result').html('');
                 });

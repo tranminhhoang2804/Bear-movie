@@ -7,7 +7,10 @@ use App\Models\Movie;
 use App\Models\Category;
 use App\Models\Genre;
 use App\Models\Country;
+use App\Models\Movie_Genre;
+
 use Carbon\Carbon;
+use Storage;
 use File;
 class MovieController extends Controller
 {
@@ -20,11 +23,12 @@ class MovieController extends Controller
     {
          $list = Movie::with('category','movie_genre','genre','country')->orderBy('id','DESC')->get();
 
-         $destinationPath = public_path()."/json_file/";
-         if(!is_dir($destinationPath)) {
-            mkdir($destinationPath,0777,true);
+         $path = public_path()."/json/";
+
+         if(!is_dir($path)) {
+            mkdir($path,0777,true);
          }
-         File::put($destinationPath.'movie.json',json_encode($list));
+         File::put($path.'movies.json',json_encode($list));
 
         return view('admincp.movie.index', compact('list'));
     }
@@ -62,6 +66,7 @@ class MovieController extends Controller
         $movie->title = $data['title'];
         $movie->tags = $data['tags'];
         $movie->thoiluong = $data['thoiluong'];
+        $movie->sotap = $data['sotap'];
         $movie->phim_hot = $data['phim_hot'];
         $movie->name_eng = $data['name_eng'];
         $movie->trailer = $data['trailer'];
@@ -136,6 +141,7 @@ class MovieController extends Controller
         $movie->title = $data['title'];
         $movie->tags = $data['tags'];
         $movie->thoiluong = $data['thoiluong'];
+        $movie->sotap = $data['sotap'];
         $movie->phim_hot = $data['phim_hot'];
         $movie->name_eng = $data['name_eng'];
         $movie->trailer = $data['trailer'];
@@ -180,9 +186,13 @@ class MovieController extends Controller
     public function destroy($id)
     {
         $movie = Movie::find($id);
+        //xoa anh
         if(file_exists('uploads/movie/'.$movie->image)){
             unlink('uploads/movie/'.$movie->image);
         }
+        //xoa the loai
+        Movie_Genre::whereIn('movie_id',[$movie->id])->delete();
+
         $movie->delete();
         return redirect()->back();
     }

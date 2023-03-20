@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <a href="{{route('movie.index')}}" class="btn btn-primary">All Movie</a>
+                <a href="{{route('movie.index')}}" class="btn btn-primary">Tất cả phim</a>
                 <div class="card-header">Quản lý phim</div>
 
                 <div class="card-body">
@@ -25,11 +25,15 @@
                         {!! Form::text('title', isset($movie) ? $movie->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('thoiluong','Thoi luong phim',[]) !!}
+                        {!! Form::label('thoiluong','Thời lượng',[]) !!}
                         {!! Form::text('thoiluong', isset($movie) ? $movie->thoiluong : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
                     </div>
+                    <div class="form-group">
+                        {!! Form::label('sotap','Số tập',[]) !!}
+                        {!! Form::text('sotap', isset($movie) ? $movie->sotap : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                    </div>
                      <div class="form-group">
-                        {!! Form::label('Tên Tieng Anh','Tên Tieng Anh',[]) !!}
+                        {!! Form::label('Tên Tieng Anh','Tên Tiếng Anh',[]) !!}
                         {!! Form::text('name_eng', isset($movie) ? $movie->name_eng : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
                     </div>
                     <div class="form-group">
@@ -61,11 +65,11 @@
                         {!! Form::select('phude', ['0'=>'Vietsub','1'=>'Thuyết minh'], isset($movie) ? $movie->phude : '' , ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('Category','Category',[]) !!}
+                        {!! Form::label('Category','Danh mục',[]) !!}
                         {!! Form::select('category_id',$category, isset($movie) ? $movie->category_id : '' , ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('Genre','Genre',[]) !!}
+                        {!! Form::label('Genre','Thể loại',[]) !!}
                         <!-- {!! Form::select('genre_id',$genre, isset($movie) ? $movie->genre_id : '' , ['class'=>'form-control']) !!} -->
                         @foreach($list_genre as $key => $gen)
                             @if(isset($movie))
@@ -77,7 +81,7 @@
                         @endforeach
                     </div>
                     <div class="form-group">
-                        {!! Form::label('Country','Country',[]) !!}
+                        {!! Form::label('Country','Quốc gia',[]) !!}
                         {!! Form::select('country_id',$country, isset($movie) ? $movie->country_id : '' , ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
@@ -85,16 +89,16 @@
                         {!! Form::select('phim_hot', ['1'=>'Co','0'=>'Khong'], isset($movie) ? $movie->phim_hot : '' , ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('Image','Image',[]) !!}
+                        {!! Form::label('Image','Ảnh',[]) !!}
                         {!! Form::file('image', ['class'=>'form-control-file']) !!}
                         @if(isset($movie))
                             <img width="200px" src="{{asset('uploads/movie/'.$movie->image)}}">
                         @endif
                     </div>
                     @if(!isset($movie))
-                        {!! Form::submit('ADD', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Thêm', ['class'=>'btn btn-success']) !!}
                     @else
-                        {!! Form::submit('UPDATE', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Cập nhật', ['class'=>'btn btn-success']) !!}
                     @endif
 
                     {!! Form::close() !!}

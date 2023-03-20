@@ -36,9 +36,9 @@
 					                        @endif
                             </span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
 											@if($mov->phude==0)
-					                            Vietsub
+					                            Vietsub - Tập 1/{{$mov->sotap}}
 					                        @else
-					                            Thuyết minh
+					                            Thuyết minh - Tập 1/{{$mov->sotap}}
 					                        @endif
                             </span> 
                             <div class="icon_overlay"></div>

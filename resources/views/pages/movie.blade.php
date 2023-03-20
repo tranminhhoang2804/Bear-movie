@@ -4,7 +4,22 @@
 <div class="panel-heading container p-2">
             <div class="row">
             <div class="col-xs-6">
-                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light"><a class="panel-heading-title text-light fw-bold" href="">Phim hay</a> » <span class="breadcrumb_last" aria-current="page"><a class="panel-heading-title text-light fw-bold" href="">2020</a></span></span></span></div>
+                <div class="yoast_breadcrumb hidden-xs">
+                    <span>
+                        <span class="text-light">
+                            <a class="panel-heading-title text-light fw-bold" href="{{route('category',[$movie->category->slug])}}">{{$movie->category->title}}</a> » 
+                            <span class="breadcrumb_last" aria-current="page">
+                                <a class="panel-heading-title text-light fw-bold" href="{{route('country',[$movie->country->slug])}}">{{$movie->country->title}}</a> »
+                                @foreach($movie->movie_genre as $gen)
+                                <a class="panel-heading-title text-light fw-bold" href="{{route('genre',[$gen->slug])}}">{{$gen->title}}</a> »
+                                @endforeach
+                            </span>
+                            <span class="breadcrumb_last" aria-current="page">
+                                {{$movie->title}}
+                            </span>
+                        </span>
+                    </span>
+                </div>
             </div>
             </div>
         </div>
@@ -44,6 +59,7 @@
                        </span></li>
                        <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Danh mục</span> : <a href="{{route('category',[$movie->category->slug])}}" rel="category tag">{{$movie->category->title}}</a></li>
                        <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Thời lượng</span> : {{$movie->thoiluong}}</li>
+                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Số tập phim</span> : {{$movie->sotap}}/{{$movie->sotap}} - Hoàn thành </li>
                        <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Thể loại</span> : 
                         @foreach($movie->movie_genre as $gen)
                             <a href="{{route('genre',$gen->slug)}}" rel="category tag">{{$gen->title}},</a>

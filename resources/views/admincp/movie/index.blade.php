@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <a href="{{route('movie.create')}}" class="btn btn-primary mb-2">Add Movie</a>
+            <a href="{{route('movie.create')}}" class="btn btn-primary mb-2">Thêm phim mới</a>
             <table class="table" id="tablephim">
                   <thead>
                     <tr>
@@ -16,16 +16,16 @@
                       <th scope="col">Phim hot</th>
                       <th scope="col">Định dạng</th>
                       <th scope="col">Phụ đề</th>
-                      <!-- <th scope="col">Mô tả</th> -->
                       <th scope="col">Slug</th>
                       <th scope="col">Active</th>
-                      <th scope="col">Category</th>
-                      <th scope="col">Genre</th>
-                      <th scope="col">Country</th>
-                      <th scope="col">Ngay tao</th>
-                      <th scope="col">Ngay cap nhat</th>
-                      <th scope="col">Year</th>
-                      <th scope="col">Manage</th>
+                      <th scope="col">Danh mục</th>
+                      <th scope="col">Thể loại</th>
+                      <th scope="col">Quốc gia</th>
+                      <th scope="col">Số tập phim</th>
+                      <th scope="col">Ngày tạo</th>
+                      <th scope="col">Ngày cập nhật</th>
+                      <th scope="col">Năm</th>
+                      <th scope="col">Thao tác</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -78,11 +78,14 @@
                       
                       <td>
                         @foreach($cate->movie_genre as $gen)
-                        {{$gen->title}}
+                        <div class="bg-dark text-light m-1 p-1 text-center"> 
+                            {{$gen->title}}
+                        </div>
                         @endforeach
                       </td>
                       
                       <td>{{$cate->country->title}}</td>
+                      <td>{{$cate->sotap}}</td>
                       <td>{{$cate->ngaytao}}</td>
                       <td>{{$cate->ngaycapnhat}}</td>
                       <td>
@@ -94,10 +97,10 @@
                             'route'=>['movie.destroy',$cate->id],
                             'onsubmit'=>'return confirm("Delete?")'
                           ]) !!}
-                          {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
+                          {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
 
                           {!! Form::close() !!}
-                          <a href="{{route('movie.edit',$cate->id)}}" class="btn btn-warning">Edit</a>
+                          <a href="{{route('movie.edit',$cate->id)}}" class="btn btn-warning">Sửa</a>
                       </td>
                     </tr>
                     @endforeach
