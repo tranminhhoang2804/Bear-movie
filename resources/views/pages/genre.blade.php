@@ -3,7 +3,7 @@
 <div class="panel-heading container p-2">
             <div class="row">
             <div class="col-xs-6">
-                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light">Thể loại » <a class="panel-heading-title text-light fw-bold" href="">{{$genre_slug->title}}</a></span></span></div>
+                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light">Thể loại » <a class="panel-heading-title text-light fw-bold" href="">{{$gen_slug->title}}</a></span></span></div>
             </div>
             </div>
         </div>
@@ -11,10 +11,10 @@
             <section id="halim-advanced-widget-4">
                <div class="section-heading mt-2 mb-2 p-2">
                   <a href="#" title="Phim Chiếu Rạp">
-                  <span class="fw-bolder text-warning">{{$genre_slug->title}}</span>
+                  <span class="fw-bolder text-warning">{{$gen_slug->title}}</span>
                   </a>
                </div>
-                <div class="halim-box row">
+                <div class="halim-box">
                 	@foreach($movie as $key => $mov)
                     <article class="col-md-2 col-sm-4 col-xs-6">
                         <div class="halim-item">
@@ -29,16 +29,14 @@
 					                            HDCam
 					                        @elseif($mov->resolution==3)
 					                            Cam
-					                        @elseif($mov->resolution==4)
-                                                FullHD
-                                            @else
-                                                Trailer
+					                        @else
+					                            FullHD
 					                        @endif
                             </span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
 											@if($mov->phude==0)
-					                            Vietsub - Tập 1/{{$mov->sotap}}
+					                            Vietsub
 					                        @else
-					                            Thuyết minh - Tập 1/{{$mov->sotap}}
+					                            Thuyết minh
 					                        @endif
                             </span> 
                             <div class="icon_overlay"></div>

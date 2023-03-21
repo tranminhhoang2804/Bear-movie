@@ -15,7 +15,7 @@
                   <span class="fw-bolder text-warning">{{$cate_slug->title}}</span>
                   </a>
                </div>
-                <div class="halim-box row">
+                <div class="halim-box">
                 	@foreach($movie as $key => $mov)
                     <article class="col-md-2 col-sm-4 col-xs-6">
                         <div class="halim-item">
@@ -30,10 +30,8 @@
 					                            HDCam
 					                        @elseif($mov->resolution==3)
 					                            Cam
-					                        @elseif($mov->resolution==4)
-                                                FullHD
-                                            @else
-                                                Trailer
+					                        @else
+					                            FullHD
 					                        @endif
                             </span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
 											@if($mov->phude==0)
