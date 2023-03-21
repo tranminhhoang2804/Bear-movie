@@ -18,7 +18,7 @@
                     @if(!isset($episode))
                         {!! Form::open(['route'=>'episode.store','method'=>'POST']) !!}
                     @else
-                        {!! Form::open(['route'=>['episode.update',$episode->id],'method'=>'PUT','enctype'=>'multipart/form-data']) !!}
+                        {!! Form::open(['route'=>['episode.update',$episode->id],'method'=>'PUT']) !!}
                     @endif
 
                     <div class="form-group">
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('episode','Tap Phim',[]) !!}
+                        {!! Form::label('link','Tap Phim',[]) !!}
                         <select name="episode" class="form-control" id="show_movie">
                             
                         </select>
@@ -51,5 +51,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection

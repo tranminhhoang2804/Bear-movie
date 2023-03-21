@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use App\Models\Movie_Genre;
 use App\Models\Category;
 use App\Models\Genre;
 use App\Models\Country;
@@ -17,7 +18,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-         //
+        $list = Movie::with('category','movie_genre','country')->orderBy('id','DESC')->get();
+        return view('admincp.movie.index', compact('list'));
     }
 
     public function update_year(Request $request) {
@@ -35,9 +37,9 @@ class MovieController extends Controller
     {
         $category = Category::pluck('title','id');
         $genre = Genre::pluck('title','id');
+        $list_genre = Genre::all();
         $country = Country::pluck('title','id');
-        $list = Movie::with('category','genre','country')->orderBy('id','DESC')->get();
-        return view('admincp.movie.form', compact('list','category','genre','country'));
+        return view('admincp.movie.form', compact('category','genre','country','list_genre'));
     }
 
     /**
@@ -51,7 +53,10 @@ class MovieController extends Controller
          $data = $request->all();
         $movie = new Movie();
         $movie->title = $data['title'];
+        $movie->tags = $data['tags'];
+        $movie->trailer = $data['trailer'];
         $movie->thoiluong = $data['thoiluong'];
+        $movie->sotap = $data['sotap'];
         $movie->phim_hot = $data['phim_hot'];
         $movie->name_eng = $data['name_eng'];
         $movie->resolution = $data['resolution'];
@@ -60,7 +65,9 @@ class MovieController extends Controller
         $movie->description = $data['description'];
         $movie->status = $data['status'];
         $movie->category_id = $data['category_id'];
-        $movie->genre_id = $data['genre_id'];
+        foreach($data['genre'] as $key => $gen){
+            $movie->genre_id=$gen[0];
+        }
         $movie->country_id = $data['country_id'];
         $movie->ngaytao = Carbon::now('Asia/Ho_Chi_Minh');
         $movie->ngaycapnhat = Carbon::now('Asia/Ho_Chi_Minh');
@@ -74,7 +81,8 @@ class MovieController extends Controller
             $movie->image = $new_image;
         }
         $movie->save();
-        return redirect()->back();
+        $movie->movie_genre()->attach($data['genre']);
+        return redirect()->route('movie.index');
     }
 
     /**
@@ -98,10 +106,11 @@ class MovieController extends Controller
     {
         $category = Category::pluck('title','id');
         $genre = Genre::pluck('title','id');
+        $list_genre = Genre::all();
         $country = Country::pluck('title','id');
-        $list = Movie::with('category','genre','country')->orderBy('id','DESC')->get();
         $movie =  Movie::find($id);
-        return view('admincp.movie.form', compact('list','category','genre','country','movie'));
+        $movie_genre = $movie->movie_genre;
+        return view('admincp.movie.form', compact('category','genre','list_genre','country','movie','movie_genre'));
     }
 
     /**
@@ -116,7 +125,10 @@ class MovieController extends Controller
         $data = $request->all();
         $movie = Movie::find($id);
         $movie->title = $data['title'];
+        $movie->trailer = $data['trailer'];
+        $movie->tags = $data['tags'];
         $movie->thoiluong = $data['thoiluong'];
+        $movie->sotap = $data['sotap'];
         $movie->phim_hot = $data['phim_hot'];
         $movie->name_eng = $data['name_eng'];
         $movie->resolution = $data['resolution'];
@@ -125,7 +137,9 @@ class MovieController extends Controller
         $movie->description=$data['description'];
         $movie->status=$data['status'];
         $movie->category_id=$data['category_id'];
-        $movie->genre_id=$data['genre_id'];
+        foreach($data['genre'] as $key => $gen){
+            $movie->genre_id=$gen[0];
+        }
         $movie->country_id=$data['country_id'];
         $movie->ngaycapnhat = Carbon::now('Asia/Ho_Chi_Minh');
         
@@ -145,7 +159,9 @@ class MovieController extends Controller
             }
         }
         $movie->save();
-        return redirect()->back();
+        //them nhieu the loai cho phim
+        $movie->movie_genre()->sync($data['genre']);
+        return redirect()->route('movie.index');
     }
 
     /**
@@ -160,6 +176,9 @@ class MovieController extends Controller
         if(file_exists('uploads/movie/'.$movie->image)){
             unlink('uploads/movie/'.$movie->image);
         }
+
+        Movie_Genre::whereIn('movie_id',[$movie->id])->delete();
+
         $movie->delete();
         return redirect()->back();
     }

@@ -158,6 +158,10 @@
 .card-name {
     text-shadow:1px 1px 2px #000000;
 }
+.film-title {
+    border-radius: 10px;
+    box-shadow: 2px 2px 25px #ffcf24;
+}
 /* ------------------------------------------- */
 .bear-footer {
     width: 60%;

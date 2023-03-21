@@ -83,11 +83,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript">
+        $('.select-movie').change(function(){
+            var id = $(this).val();
+            $.ajax({
+                url:"{{route('select-movie')}}",
+                method:"GET",
+                data:{id:id},
+                success:function(data) 
+                    {
+                        $('#show_movie').html(data);
+                    }
+            });
+        })
+    </script>
+    <script type="text/javascript">
         $('.select-year').change(function() {
             var year = $(this).find(':selected').val();
             var id_phim = $(this).attr('id');
-            // alert(year);
-            // alert(id_phim);
             $.ajax({
                 url: "{{ url('/update-year-phim') }}",
                 method: "GET",

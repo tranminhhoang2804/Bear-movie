@@ -41,7 +41,7 @@
                 <ul class="nav justify-content-center">
                 	@foreach($category as $key => $cate)
 	                    <li class="nav-item">
-	                    <a class="nav-link text-warning" href="{{route('category',$cate->slug)}}">{{$cate->title}}</a>
+	                    <a class="nav-link text-warning" title="{{$cate->title}}" href="{{route('category',$cate->slug)}}">{{$cate->title}}</a>
 	                    </li>
                    	@endforeach
                     <li class="nav-item dropdown">
@@ -49,7 +49,7 @@
                         <ul class="dropdown-content">
                         	@foreach($genre as $key => $gen)
                         		<li>
-                        			<a class="text-warning" href="#" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
+                        			<a class="text-warning" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
                         		</li>
                         	@endforeach
                         </ul>

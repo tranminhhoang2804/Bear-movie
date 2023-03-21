@@ -30,6 +30,7 @@ Route::get('/xem-phim',[IndexController::class, 'watch'])->name('watch');
 Route::get('/episode',[IndexController::class, 'episode'])->name('episode');
 Route::get('/login',[IndexController::class, 'login'])->name('login');
 Route::get('/nam/{year}',[IndexController::class, 'year']);
+Route::get('/tag/{tag}',[IndexController::class, 'tag']);
 
 Auth::routes();
 
@@ -38,6 +39,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('category', CategoryController::class);
 Route::resource('genre', GenreController::class);
 Route::resource('country', CountryController::class);
+
 Route::resource('episode', EpisodeController::class);
+Route::get('select-movie', [EpisodeController::class,'select_movie'])->name('select-movie');
+
 Route::resource('movie', MovieController::class);
 Route::get('/update-year-phim',[MovieController::class, 'update_year']);

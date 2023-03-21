@@ -22,16 +22,18 @@
                             <figure><img class="lazy card-img-top" src="{{asset('uploads/movie/'.$mov->image)}}" alt="gallery 2"></figure>
                             <span class="status">
 											@if($mov->resolution==0)
-					                            HD
-					                        @elseif($mov->resolution==1)
-					                            SD
-					                        @elseif($mov->resolution==2)
-					                            HDCam
-					                        @elseif($mov->resolution==3)
-					                            Cam
-					                        @else
-					                            FullHD
-					                        @endif
+                                                HD
+                                            @elseif($mov->resolution==1)
+                                                SD
+                                            @elseif($mov->resolution==2)
+                                                HDCam
+                                            @elseif($mov->resolution==3)
+                                                Cam
+                                            @elseif($mov->resolution==4)
+                                                FullHD
+                                            @else
+                                                Trailer
+                                            @endif
                             </span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
 											@if($mov->phude==0)
 					                            Vietsub

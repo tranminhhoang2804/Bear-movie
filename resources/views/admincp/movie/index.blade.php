@@ -11,9 +11,9 @@
                       <th scope="col">#</th>
                       <th scope="col">Tên phim</th>
                       <th scope="col">Tags phim</th>
-                      <th scope="col">thời lượng phim</th>
+                      <th scope="col">Thời lượng phim</th>
                       <th scope="col">Hình ảnh</th>
-                      <th scope="col">Phim hot</th>
+                      <th scope="col">Phim nổi bật</th>
                       <th scope="col">Định dạng</th>
                       <th scope="col">Phụ đề</th>
                       <th scope="col">Slug</th>
@@ -38,9 +38,9 @@
                        <td><img width="200px" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
                        <td>
                           @if($cate->phim_hot==0)
-                            Khong
+                            Không
                           @else
-                            Co
+                            Có
                           @endif
                       </td>
                        <td>
@@ -65,7 +65,6 @@
                             Thuyết minh
                         @endif
                        </td>
-                      <!-- <td>{{$cate->description}}</td> -->
                       <td>{{$cate->slug}}</td>
                       <td>
                           @if($cate->status)
@@ -75,12 +74,11 @@
                           @endif
                       </td>
                       <td>{{$cate->category->title}}</td>
-                      
                       <td>
                         @foreach($cate->movie_genre as $gen)
-                        <div class="bg-dark text-light m-1 p-1 text-center"> 
+                        <span class="badge badge-dark"> 
                             {{$gen->title}}
-                        </div>
+                        </span><br>
                         @endforeach
                       </td>
                       
