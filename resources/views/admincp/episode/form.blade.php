@@ -31,10 +31,17 @@
                         {!! Form::text('link', isset($episode) ? $episode->linkphim : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
                     </div>
 
+                    @if(isset($episode))
                     <div class="form-group">
                         {!! Form::label('episode','Tap phim',[]) !!}
-                        {!! Form::text('episode', isset($episode) ? $episode->episode : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','readonly']) !!}
+                        {!! Form::text('episode', isset($episode) ? $episode->episode : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu', isset($episode) ? 'readonly' : '']) !!}
                     </div>
+                    @else
+                    <div class="form-group">
+                        {!! Form::label('episode','Tap phim',[]) !!}
+                        <select name="episode" class="form-control" id="show_movie"></select>
+                    </div>
+                    @endif
 
                     @if(!isset($episode))
                         {!! Form::submit('Thêm', ['class'=>'btn btn-success']) !!}

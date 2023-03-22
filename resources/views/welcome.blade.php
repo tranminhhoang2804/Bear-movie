@@ -18,7 +18,7 @@
 			<div class="container-fluid">
             <!-- header -->
             <nav class="navbar navbar-expand-lg movie-header sticky-top">
-                <div class="container-fluid">
+                <div class="container">
                     <a class="navbar-brand col-3" href="{{route('homepage')}}"><img class="bear-logo img-thumbnail" src="{{asset('img/bear_logo.jpg')}}" title="Bear movie"><img class="bear-footer" src="{{asset('img/bear-footer.png')}}" title="Bear movie"></a>
                     <form class="d-flex col-5 gap-2" role="search">
                         <input class="form-control" type="search"

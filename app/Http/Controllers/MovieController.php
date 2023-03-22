@@ -8,6 +8,7 @@ use App\Models\Movie_Genre;
 use App\Models\Category;
 use App\Models\Genre;
 use App\Models\Country;
+use App\Models\Episode;
 use Carbon\Carbon;
 class MovieController extends Controller
 {
@@ -177,9 +178,13 @@ class MovieController extends Controller
             unlink('uploads/movie/'.$movie->image);
         }
 
+        //xoatheloai
         Movie_Genre::whereIn('movie_id',[$movie->id])->delete();
 
+        //xoatapphim
+        Episode::whereIn('movie_id',[$movie->id])->delete();
         $movie->delete();
+
         return redirect()->back();
     }
 }

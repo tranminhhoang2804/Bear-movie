@@ -6,7 +6,7 @@
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
                       <a href="#" title="Phim Chiếu Rạp">
-                      <span class="fw-bolder text-warning">» Phim sap chieu</span>
+                      <span class="fw-bolder text-warning">» Phim sắp chiếu</span>
                       </a>
                    </div>               		
 	               		<div class="halim-box row">
@@ -14,7 +14,7 @@
 	                        <article class="col-md-2 col-sm-4 col-xs-6">
 	                            <div class="halim-item">
 	                            <a class="halim-thumb" href="{{route('movie',$mov->slug)}}">
-	                                <figure><img class="lazy card-img-top" src="{{asset('uploads/movie/'.$mov->image)}}" title="{{$mov->title}}"></figure>
+	                                <figure><img class="lazy card-img-top" height="280em" src="{{asset('uploads/movie/'.$mov->image)}}" title="{{$mov->title}}"></figure>
 	                                <span class="status">
 	                               	@if($mov->resolution==0)
 				                            HD
@@ -67,7 +67,7 @@
 	                        <article class="col-md-2 col-sm-4 col-xs-6">
 	                            <div class="halim-item">
 	                            <a class="halim-thumb" href="{{route('movie',$mov->slug)}}">
-	                                <figure><img class="lazy card-img-top" src="{{asset('uploads/movie/'.$mov->image)}}" title="{{$mov->title}}"></figure>
+	                                <figure><img class="lazy card-img-top" height="280em" src="{{asset('uploads/movie/'.$mov->image)}}" title="{{$mov->title}}"></figure>
 	                                <span class="status">
 	                               	@if($mov->resolution==0)
 				                            HD

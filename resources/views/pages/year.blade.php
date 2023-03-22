@@ -23,7 +23,7 @@
                   <span class="fw-bolder text-warning">{{$year}}</span>
                   </a>
                </div>
-                <div class="halim-box">
+                <div class="halim-box row">
                 	 @foreach($movie as $key => $mov)
                     <article class="col-md-2 col-sm-4 col-xs-6">
                         <div class="halim-item">

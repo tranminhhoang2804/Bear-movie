@@ -32,10 +32,6 @@
                         {!! Form::label('sotap','Số tập phim',[]) !!}
                         {!! Form::text('sotap', isset($movie) ? $movie->sotap : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::label('title','Tên phim',[]) !!}
-                        {!! Form::text('title', isset($movie) ? $movie->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
-                    </div>
                      <div class="form-group">
                         {!! Form::label('Tên Tieng Anh','Tên tiếng Anh',[]) !!}
                         {!! Form::text('name_eng', isset($movie) ? $movie->name_eng : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}

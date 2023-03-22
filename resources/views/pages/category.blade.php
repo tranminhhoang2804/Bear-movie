@@ -15,12 +15,12 @@
                   <span class="fw-bolder text-warning">{{$cate_slug->title}}</span>
                   </a>
                </div>
-                <div class="halim-box">
+                <div class="halim-box row">
                 	@foreach($movie as $key => $mov)
                     <article class="col-md-2 col-sm-4 col-xs-6">
                         <div class="halim-item">
                         <a class="halim-thumb" href="{{route('movie',$mov->slug)}}" title="{{$mov->title}}">
-                            <figure><img class="lazy card-img-top" src="{{asset('uploads/movie/'.$mov->image)}}" alt="gallery 2"></figure>
+                            <figure><img class="lazy card-img-top" height="280em" src="{{asset('uploads/movie/'.$mov->image)}}" alt="gallery 2"></figure>
                             <span class="status">
 											@if($mov->resolution==0)
                                                 HD
