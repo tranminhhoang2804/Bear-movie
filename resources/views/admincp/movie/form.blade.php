@@ -25,7 +25,7 @@
                         {!! Form::text('title', isset($movie) ? $movie->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('thoiluong','Thoi luong phim',[]) !!}
+                        {!! Form::label('thoiluong','Thời lượng phim',[]) !!}
                         {!! Form::text('thoiluong', isset($movie) ? $movie->thoiluong : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
                     </div>
                     <div class="form-group">

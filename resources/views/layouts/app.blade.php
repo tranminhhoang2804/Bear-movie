@@ -89,12 +89,12 @@
                 url:"{{route('select-movie')}}",
                 method:"GET",
                 data:{id:id},
-                success:function(data) 
+                success:function(data)
                     {
                         $('#show_movie').html(data);
                     }
             });
-        })
+        });
     </script>
     <script type="text/javascript">
         $('.select-year').change(function() {
