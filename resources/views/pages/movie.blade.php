@@ -47,7 +47,7 @@
                                           @else
                                               Trailer
                                           @endif
-                           </span>
+                           </span> &nbsp
                            @if($movie->resolution!=5)
                           <span class="movie-episode fw-bold">
    											    @if($movie->phude==0)
@@ -82,44 +82,50 @@
             </div>
         </div>
         <div class="clearfix"></div>
-                     <div class="section-bar container col-8">
-                        <p class="section-title h5"><span class="text-warning">Nội dung phim</span></h2>
-                     </div>
-                     <div class="entry-content htmlwrap container col-7">
-                        <div class="video-item halim-entry-box">
-                           <article id="post-38424" class="item-content text-light">
-						            {{$movie->description}}
-						         </article>
+                     <div class="section-container container">
+                        <div class="section-bar border-bottom">
+                           <p class="section-title h5"><span class="text-warning">Nội dung phim</span></p>
+                        </div>
+                        <div class="entry-content htmlwrap">
+                           <div class="video-item halim-entry-box p-3">
+                              <article id="post-38424" class="item-content text-light">
+   						            {{$movie->description}}
+   						         </article>
+                           </div>
                         </div>
                      </div>
-                     <div class="section-bar container col-8">
-                        <p class="section-title h5"><span class="text-warning">Tags</span></h2>
-                     </div>
-                     <div class="entry-content htmlwrap container col-7">
-                        <div class="video-item halim-entry-box">
-                           <article id="post-38424" class="item-content text-light">
-                              @if($movie->tags!=NULL)
-                                 @php
-                                    $tags = array();
-                                    $tags = explode(',',$movie->tags);
-                                 @endphp
-                                 @foreach($tags as $key => $tag)
-                                    <a href="{{url('tag/'.$tag)}}">{{$tag}},</a>
-                                 @endforeach
-                              @else
-                                 {{$movie->title}},
-                              @endif                            
-                           </article>
+                     <div class="section-container container">
+                        <div class="section-bar border-bottom">
+                           <p class="section-title h5"><span class="text-warning">Tags</span></p>
+                        </div>
+                        <div class="entry-content htmlwrap">
+                           <div class="video-item halim-entry-box p-3">
+                              <article id="post-38424" class="item-content text-light">
+                                 @if($movie->tags!=NULL)
+                                    @php
+                                       $tags = array();
+                                       $tags = explode(',',$movie->tags);
+                                    @endphp
+                                    @foreach($tags as $key => $tag)
+                                       <a href="{{url('tag/'.$tag)}}">{{$tag}},</a>
+                                    @endforeach
+                                 @else
+                                    {{$movie->title}},
+                                 @endif                            
+                              </article>
+                           </div>
                         </div>
                      </div>
-                     <div class="section-bar container col-8">
-                        <p class="section-title h5"><span class="text-warning">TRAILER</span></h2>
+                     <div class="section-container container">
+                     <div class="section-bar border-bottom">
+                        <p class="section-title h5"><span class="text-warning">TRAILER</span></p>
                      </div>
                      <div class="entry-content htmlwrap container col-7">
-                        <div class="video-item halim-entry-box">
+                        <div class="video-item halim-entry-box d-flex justify-content-center p-5">
                            <article id="trailer" class="item-content text-light">
                               <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$movie->trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                            </article>
                         </div>
                      </div>
+                  </div>
 @endsection

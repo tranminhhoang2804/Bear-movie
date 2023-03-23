@@ -162,6 +162,12 @@
     border-radius: 10px;
     box-shadow: 2px 2px 25px #ffcf24;
 }
+.section-container {
+    background-color: #333333;
+    padding: 5px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
 /* ------------------------------------------- */
 .bear-footer {
     width: 60%;
