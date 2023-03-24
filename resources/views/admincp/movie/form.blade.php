@@ -68,6 +68,10 @@
                         {!! Form::label('Category','Danh mục',[]) !!}
                         {!! Form::select('category_id',$category, isset($movie) ? $movie->category_id : '' , ['class'=>'form-control']) !!}
                     </div>
+                     <div class="form-group">
+                        {!! Form::label('thuocphim','Thuoc the loai phim',[]) !!}
+                        {!! Form::select('thuocphim',['phimle'=>'Phim le','phimbo'=>'Phim bo'], isset($movie) ? $movie->thuocphim : '' , ['class'=>'form-control']) !!}
+                    </div>
                     <div class="form-group">
                         {!! Form::label('Genre','Thể loại',[]) !!}<br>
                         @foreach($list_genre as $key => $gen)

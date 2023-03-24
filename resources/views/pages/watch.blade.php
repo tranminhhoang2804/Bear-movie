@@ -19,9 +19,15 @@
              <div class="wrap-content d-block">
                 <div class="show-movie d-flex justify-content-center">
                     <div class="show-movie-item col-10">
-                     @foreach($movie->episode as $ep)
-                        {!! $ep->linkphim !!}
-                        @endforeach
+                     <style type="text/css">
+                        .iframe_phim iframe {
+                           width: 100%;
+                           height: 500px;
+                        }
+                     </style>
+                     <div class="iframe_phim"> 
+                        {!! $episode->linkphim !!}
+                     </div>
                     </div>
                 </div>
                 <div class="button-watch container col-10 d-flex justify-content-end">
@@ -85,8 +91,8 @@
                          <div class="halim-server mt-3">
                             <ul class="halim-list-eps d-flex justify-content-start">
                               @foreach($movie->episode as $key => $sotap)
-                              <a href="{{route('so-tap')}}">
-                               <li class="halim-episode"><span class="halim-btn halim-btn-2 {{$key==0 ? 'active' : ''}} halim-info-1-1 box-shadow" data-post-id="37976" data-server="1" data-episode="1" data-position="first" data-embed="0" data-title="Xem phim {{$movie->title}} - Tập {{$sotap->episode}} - {{$movie->name_eng}}" data-h1="{{$movie->title}} -tap {{$sotap->episode}}">{{$sotap->episode}}</span></li>
+                              <a href="{{url('xem-phim/'.$movie->slug.'/tap-'.$sotap->episode)}}">
+                               <li class="halim-episode"><span class="halim-btn halim-btn-2 {{$tapphim==$sotap->episode ? 'active' : ''}} halim-info-1-1 box-shadow" data-post-id="37976" data-server="1" data-episode="1" data-position="first" data-embed="0" data-title="Xem phim {{$movie->title}} - Tập {{$sotap->episode}} - {{$movie->name_eng}}" data-h1="{{$movie->title}} -tap {{$sotap->episode}}">{{$sotap->episode}}</span></li>
                               </a>
                               @endforeach
                             </ul>

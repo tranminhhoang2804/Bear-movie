@@ -72,16 +72,32 @@ class IndexController extends Controller
     public function movie($slug){
         $category = Category::orderBy('id','DESC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
-        $country = Country::orderBy('id','DESC')->get();
+        $country = Country::orderBy('id','DESC')->get();       
         $movie = Movie::with('category','genre','country','movie_genre')->where('slug',$slug)->where('status',1)->first();
-        return view('pages.movie',compact('category','genre','country','movie'));
+        $episode_tapdau = Episode::with('movie')->where('movie_id',$movie->id)->orderBy('episode','ASC')->take(1)->first();
+        //lay 3 tap gan nhat
+        $episode = Episode::with('movie')->where('movie_id',$movie->id)->orderBy('episode','DESC')->take(3)->get();
+        //lay tong so tap
+        $episode_current_list = Episode::with('movie')->where('movie_id',$movie->id)->get();
+        $episode_current_list_count = $episode_current_list->count();
+        return view('pages.movie',compact('category','genre','country','movie','episode','episode_tapdau','episode_current_list_count'));
     }
-    public function watch($slug){
+    public function watch($slug,$tap){
         $category = Category::orderBy('id','DESC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
         $movie = Movie::with('category','genre','episode','country','movie_genre')->where('slug',$slug)->where('status',1)->first();
-        return view('pages.watch', compact('category','genre','country','movie'));
+        
+        if(isset($tap)){
+            $tapphim=$tap;
+            $tapphim = substr($tap, 4,1);
+            $episode = Episode::where('movie_id',$movie->id)->where('episode',$tapphim)->first();
+        }else{
+            $tapphim=1;
+            $episode = Episode::where('movie_id',$movie->id)->where('episode',$tapphim)->first();
+        }
+
+        return view('pages.watch', compact('category','genre','country','movie','episode','tap','tapphim'));
     }
     public function episode(){
         return view('pages.episode');

@@ -66,6 +66,7 @@ class MovieController extends Controller
         $movie->description = $data['description'];
         $movie->status = $data['status'];
         $movie->category_id = $data['category_id'];
+        $movie->thuocphim = $data['thuocphim'];
         foreach($data['genre'] as $key => $gen){
             $movie->genre_id=$gen[0];
         }
@@ -138,6 +139,7 @@ class MovieController extends Controller
         $movie->description=$data['description'];
         $movie->status=$data['status'];
         $movie->category_id=$data['category_id'];
+        $movie->thuocphim = $data['thuocphim'];
         foreach($data['genre'] as $key => $gen){
             $movie->genre_id=$gen[0];
         }
