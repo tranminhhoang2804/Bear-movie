@@ -13,7 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $list= Category::all();
+        return view('admincp.category.index',compact('list'));
     }
 
     /**
@@ -23,8 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $list= Category::all();
-        return view('admincp.category.form',compact('list'));
+        return view('admincp.category.form');
     }
 
     /**
@@ -42,7 +42,7 @@ class CategoryController extends Controller
         $category->description=$data['description'];
         $category->status=$data['status'];
         $category->save();
-        return redirect()->back();
+        return redirect()->route('category.index');
     }
 
     /**
@@ -65,8 +65,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category=Category::find($id);
-        $list= Category::all();
-        return view('admincp.category.form',compact('list','category'));
+        return view('admincp.category.form',compact('category'));
     }
 
     /**
@@ -85,7 +84,7 @@ class CategoryController extends Controller
         $category->description=$data['description'];
         $category->status=$data['status'];
         $category->save();
-        return redirect()->back();
+        return redirect()->route('category.index');
     }
 
     /**

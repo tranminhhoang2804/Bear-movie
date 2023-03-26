@@ -86,8 +86,9 @@
                                  @endforeach
                              
                               @elseif($movie->thuocphim=='phimle')
-                                 <a href="" rel="tag">HD</a>
-                                 <a href="" rel="tag">FullHD</a>
+                                 @foreach($episode as $key =>$ep_le)
+                                 <a href="{{url('xem-phim/'.$ep_le->movie->slug.'/tap-'.$ep_le->episode)}}" rel="tag">{{$ep_le->episode}}</a>
+                                 @endforeach
                               @endif 
 
                            @else

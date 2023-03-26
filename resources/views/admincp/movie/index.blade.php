@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <a href="{{route('movie.create')}}" class="btn btn-primary mb-2">Thêm phim mới</a>
+            <!-- <a href="{{route('movie.create')}}" class="btn btn-primary mb-2">Thêm phim mới</a> -->
             <table class="table" id="tablephim">
                   <thead>
                     <tr>

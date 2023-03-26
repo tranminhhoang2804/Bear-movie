@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <a href="{{route('movie.index')}}" class="btn btn-primary mb-2">Danh sách phim</a>
+                <!-- <a href="{{route('movie.index')}}" class="btn btn-primary mb-2">Danh sách phim</a> -->
                 <div class="card-header">Quản lý phim</div>
 
                 <div class="card-body">
