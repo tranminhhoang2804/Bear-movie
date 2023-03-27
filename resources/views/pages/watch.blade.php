@@ -106,52 +106,7 @@
                    <div id="lightout"></div>
                 </div>
           </section>
-          <section class="related-movies container">
-          <div id="halim_related_movies-2xx" class="wrap-slider">
-          <div class="section-bar clearfix">
-          <h3 class="section-title"><span>CÓ THỂ BẠN MUỐN XEM</span></h3>
-          </div>
-          <div class="col-xs-12 movie-by-cate container">
-            <section id="halim-advanced-widget-4">
-               <div class="section-heading mt-2 mb-2 p-2">
-                  <a href="#" title="Phim Chiếu Rạp">
-                  <span class="fw-bolder text-warning">CÓ THỂ BẠN MUỐN XEM</span>
-                  </a>
-               </div>
-                <div class="halim-box row">
-                    <article class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="halim-item">
-                        <a class="halim-thumb" href="#" title="GÓA PHỤ ĐEN">
-                            <figure><img class="lazy card-img-top" src="./img/nobita-tham-hiem-vung-dat-moi.jfif" alt="GÓA PHỤ ĐEN" title="GÓA PHỤ ĐEN"></figure>
-                            <span class="status">HD</span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>Vietsub</span> 
-                            <div class="icon_overlay"></div>
-                            <div class="halim-post-title-box">
-                                <div class="halim-post-title ">
-                                    <p class="card-title fw-bold text-light">GÓA PHỤ ĐEN</p>
-                                    <p class="original_title fst-italic text-light">Black Widow</p>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    </article>
-                    <article class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="halim-item">
-                        <a class="halim-thumb" href="#" title="GÓA PHỤ ĐEN">
-                            <figure><img class="lazy card-img-top" src="./img/nobita-tham-hiem-vung-dat-moi.jfif" alt="GÓA PHỤ ĐEN" title="GÓA PHỤ ĐEN"></figure>
-                            <span class="status">HD</span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>Vietsub</span> 
-                            <div class="icon_overlay"></div>
-                            <div class="halim-post-title-box">
-                                <div class="halim-post-title ">
-                                    <p class="card-title fw-bold text-light">GÓA PHỤ ĐEN</p>
-                                    <p class="original_title fst-italic text-light">Black Widow</p>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    </article>
-                </div>
-                
-            </section>
+          
         </div>
           <script>
              jQuery(document).ready(function($) {           

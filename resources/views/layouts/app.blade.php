@@ -145,7 +145,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <span class="icon-bar"></span>
               </button>
               <h1>
-                <a class="navbar-brand" href="{{url('/home')}}">BEAR MOVIE
+                <a class="navbar-brand" href="{{url('/')}}">BEAR MOVIE
                     <span class="dashboard_text">admin control</span></a>
               </h1>
             </div>
@@ -548,41 +548,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <div class="col_3">
             <div class="col-md-3 widget widget1">
               <div class="r3_counter_box">
-                <i class="pull-left fa fa-dollar icon-rounded"></i>
+                <i class="pull-left fa fa-file icon-rounded"></i>
                 <div class="stats">
-                  <h5><strong>$452</strong></h5>
-                  <span>Total Revenue</span>
+                  <h5><strong>{{$category_total}}</strong></h5>
+                  <span>Danh mục phim</span>
                 </div>
               </div>
             </div>
             <div class="col-md-3 widget widget1">
               <div class="r3_counter_box">
-                <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
+                <i class="pull-left fa fa-child user1 icon-rounded"></i>
                 <div class="stats">
-                  <h5><strong>$1019</strong></h5>
-                  <span>Online Revenue</span>
+                  <h5><strong>{{$genre_total}}</strong></h5>
+                  <span>Thể loại</span>
                 </div>
               </div>
             </div>
             <div class="col-md-3 widget widget1">
               <div class="r3_counter_box">
-                <i class="pull-left fa fa-money user2 icon-rounded"></i>
+                <i class="pull-left fa fa-globe user2 icon-rounded"></i>
                 <div class="stats">
-                  <h5><strong>$1012</strong></h5>
-                  <span>Expenses</span>
+                  <h5><strong>{{$country_total}}</strong></h5>
+                  <span>Quốc gia</span>
                 </div>
               </div>
             </div>
             <div class="col-md-3 widget widget1">
               <div class="r3_counter_box">
-                <i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
+                <i class="pull-left fa fa-film dollar1 icon-rounded"></i>
                 <div class="stats">
-                  <h5><strong>$450</strong></h5>
-                  <span>Expenditure</span>
+                  <h5><strong>{{$movie_total}}</strong></h5>
+                  <span>Phim</span>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 widget">
+            <!-- <div class="col-md-3 widget">
               <div class="r3_counter_box">
                 <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                 <div class="stats">
@@ -590,7 +590,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <span>Total Users</span>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="clearfix"></div>
           </div>
           <div class="row-one widgettable">
@@ -611,66 +611,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <script src="{{asset('admin/js/light.js')}}"></script>
           <!-- for amcharts js -->
           <script src="{{asset('admin/js/index1.js')}}"></script>
-          <div class="charts">
-            <div class="mid-content-top charts-grids">
-              <div class="middle-content">
-                <h4 class="title">Carousel Slider</h4>
-                <!-- start content_slider -->
-                <div id="owl-demo" class="owl-carousel text-center">
-                  <div class="item">
-                    <img
-                      class="lazyOwl img-responsive"
-                      data-src="images/slider1.jpg"
-                      alt="name"
-                    />
-                  </div>
-                  <div class="item">
-                    <img
-                      class="lazyOwl img-responsive"
-                      data-src="images/slider2.jpg"
-                      alt="name"
-                    />
-                  </div>
-                  <div class="item">
-                    <img
-                      class="lazyOwl img-responsive"
-                      data-src="images/slider3.jpg"
-                      alt="name"
-                    />
-                  </div>
-                  <div class="item">
-                    <img
-                      class="lazyOwl img-responsive"
-                      data-src="images/slider4.jpg"
-                      alt="name"
-                    />
-                  </div>
-                  <div class="item">
-                    <img
-                      class="lazyOwl img-responsive"
-                      data-src="images/slider5.jpg"
-                      alt="name"
-                    />
-                  </div>
-                  <div class="item">
-                    <img
-                      class="lazyOwl img-responsive"
-                      data-src="images/slider6.jpg"
-                      alt="name"
-                    />
-                  </div>
-                  <div class="item">
-                    <img
-                      class="lazyOwl img-responsive"
-                      data-src="images/slider7.jpg"
-                      alt="name"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!--//sreen-gallery-cursual---->
-            </div>
-          </div>
+          
           <div class="container-fluid">
             @yield('content')
             <div class="clearfix"></div>
@@ -687,7 +628,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <!--//footer-->
     </div>
     @else
-    <div class="container">
+    <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -755,7 +696,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
         </div>
     </div>
-    </div>
+    </div> -->
+    @yield('content_login')
     @endif
     <!-- new added graphs chart js-->
     <script src="{{asset('admin/js/Chart.bundle.js')}}"></script>
