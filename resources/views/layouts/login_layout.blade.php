@@ -22,7 +22,6 @@
                 <div class="row g-0">
                   <div class="col-lg-6">
                     <div class="card-body p-md-5 mx-md-4">
-
                       <div class="text-center">
                         <img src="{{asset('img/bear_logo.jpg')}}"
                           style="width: 185px; border-radius:30px ;" alt="logo">
@@ -45,7 +44,7 @@
 
                         <div class="form-outline mb-4">
                           <label class="form-label" for="form2Example22">Password</label>
-                          <input id="form2Example22" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                          <input id="form2Example22" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -54,7 +53,7 @@
                                 @enderror
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-1">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -64,24 +63,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">
                                     {{ __('Login') }}
                                 </button>
-
+                              </div>
+                              <div class="d-flex justify-content-center">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                              </div>
                             </div>
                         </div>
-
-                        <!-- <div class="d-flex align-items-center justify-content-center pb-4">
+                        @guest
+                        <div class="d-flex align-items-center justify-content-center pb-4">
                           <p class="mb-0 me-2">Don't have an account?</p>
-                          <button type="button" class="btn btn-outline-danger">Create new</button>
-                        </div> -->
+                           @if (Route::has('register'))
+                              <a class="nav-link text-warning" href="{{ route('register') }}">{{ __('Register') }}</a>
+                               @endif
+                        </div>
+                        @endguest
 
                       </form>
 

@@ -123,580 +123,435 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
   <body class="cbp-spmenu-push">
     @if(Auth::check())
-    <div class="main-content">
-      <div
-        class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left"
-        id="cbp-spmenu-s1"
-      >
-        <!--left-fixed -navigation-->
-        <aside class="sidebar-left">
-          <nav class="navbar navbar-inverse">
-            <div class="navbar-header">
-              <button
-                type="button"
-                class="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target=".collapse"
-                aria-expanded="false"
-              >
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <h1>
-                <a class="navbar-brand" href="{{url('/')}}">BEAR MOVIE
-                    <span class="dashboard_text">admin control</span></a>
-              </h1>
-            </div>
-            <div
-              class="collapse navbar-collapse"
-              id="bs-example-navbar-collapse-1"
-            >
-              <ul class="sidebar-menu">
-                <li class="header">QUẢN LÝ WEB PHIM</li>
-                <li class="treeview">
-                  <a href="index.html">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                  </a>
-                </li>
-                <!-- Danh mục -->
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>DANH MỤC PHIM</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li>
-                      <a href="{{route('category.create')}}"><i class="fa fa-angle-right"></i>Thêm danh mục phim</a>
-                    </li>
-                    <li>
-                      <a href="{{route('category.index')}}"><i class="fa fa-angle-right"></i>Danh sách danh mục</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- Thể loại -->
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>THỂ LOẠI PHIM</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li>
-                      <a href="{{route('genre.create')}}"><i class="fa fa-angle-right"></i>Thêm thể loại phim</a>
-                    </li>
-                    <li>
-                      <a href="{{route('genre.index')}}"><i class="fa fa-angle-right"></i>Danh sách thể loại phim</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- Quốc gia -->
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>QUỐC GIA</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li>
-                      <a href="{{route('country.create')}}"><i class="fa fa-angle-right"></i>Thêm quốc gia</a>
-                    </li>
-                    <li>
-                      <a href="{{route('country.index')}}"><i class="fa fa-angle-right"></i>Danh sách quốc gia</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- phim -->
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>QUẢN LÝ PHIM</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li>
-                      <a href="{{route('movie.create')}}"><i class="fa fa-angle-right"></i>Thêm phim mới</a>
-                    </li>
-                    <li>
-                      <a href="{{route('movie.index')}}"><i class="fa fa-angle-right"></i>Danh sách phim</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- tập phim -->
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>QUẢN LÝ TẬP PHIM</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li>
-                      <a href="{{route('episode.create')}}"><i class="fa fa-angle-right"></i>Thêm tập phim mới</a>
-                    </li>
-                    <li>
-                      <a href="{{route('episode.index')}}"><i class="fa fa-angle-right"></i>Danh sách tập phim</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-          </nav>
-        </aside>
-      </div>
-      <!--left-fixed -navigation-->
-      <!-- header-starts -->
-      <div class="sticky-header header-section">
-        <div class="header-left">
-          <!--toggle button start-->
-          <button id="showLeftPush"><i class="fa fa-bars"></i></button>
-          <!--toggle button end-->
-          <div class="profile_details_left">
-            <!--notifications of menu start -->
-            <ul class="nofitications-dropdown">
-              <li class="dropdown head-dpdn">
-                <a
-                  href="#"
-                  class="dropdown-toggle"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                  ><i class="fa fa-envelope"></i><span class="badge">4</span></a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="notification_header">
-                      <h3>You have 3 new messages</h3>
+            <div class="main-content">
+              <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <aside class="sidebar-left">
+                  <nav class="navbar navbar-inverse">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <h1>
+                        <a class="navbar-brand" href="{{url('/')}}">BEAR MOVIE
+                            <span class="dashboard_text">admin control</span></a>
+                      </h1>
                     </div>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/1.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li class="odd">
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/4.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/3.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/2.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="notification_bottom">
-                      <a href="#">See all messages</a>
+                    <div
+                      class="collapse navbar-collapse"
+                      id="bs-example-navbar-collapse-1"
+                    >
+                      <ul class="sidebar-menu">
+                        <li class="header">QUẢN LÝ WEB PHIM</li>
+                        <li class="treeview">
+                          <a href="index.html">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                          </a>
+                        </li>
+                        <li class="treeview">
+                          <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>DANH MỤC PHIM</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li>
+                              <a href="{{route('category.create')}}"><i class="fa fa-angle-right"></i>Thêm danh mục phim</a>
+                            </li>
+                            <li>
+                              <a href="{{route('category.index')}}"><i class="fa fa-angle-right"></i>Danh sách danh mục</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="treeview">
+                          <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>THỂ LOẠI PHIM</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li>
+                              <a href="{{route('genre.create')}}"><i class="fa fa-angle-right"></i>Thêm thể loại phim</a>
+                            </li>
+                            <li>
+                              <a href="{{route('genre.index')}}"><i class="fa fa-angle-right"></i>Danh sách thể loại phim</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="treeview">
+                          <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>QUỐC GIA</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li>
+                              <a href="{{route('country.create')}}"><i class="fa fa-angle-right"></i>Thêm quốc gia</a>
+                            </li>
+                            <li>
+                              <a href="{{route('country.index')}}"><i class="fa fa-angle-right"></i>Danh sách quốc gia</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="treeview">
+                          <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>QUẢN LÝ PHIM</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li>
+                              <a href="{{route('movie.create')}}"><i class="fa fa-angle-right"></i>Thêm phim mới</a>
+                            </li>
+                            <li>
+                              <a href="{{route('movie.index')}}"><i class="fa fa-angle-right"></i>Danh sách phim</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="treeview">
+                          <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>QUẢN LÝ TẬP PHIM</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li>
+                              <a href="{{route('episode.create')}}"><i class="fa fa-angle-right"></i>Thêm tập phim mới</a>
+                            </li>
+                            <li>
+                              <a href="{{route('episode.index')}}"><i class="fa fa-angle-right"></i>Danh sách tập phim</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
                     </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown head-dpdn">
-                <a
-                  href="#"
-                  class="dropdown-toggle"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                  ><i class="fa fa-bell"></i
-                  ><span class="badge blue">4</span></a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="notification_header">
-                      <h3>You have 3 new notification</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/4.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li class="odd">
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/1.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/3.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="user_img">
-                        <img src="images/2.jpg" alt="" />
-                      </div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor amet</p>
-                        <p><span>1 hour ago</span></p>
-                      </div>
-                      <div class="clearfix"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="notification_bottom">
-                      <a href="#">See all notifications</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown head-dpdn">
-                <a
-                  href="#"
-                  class="dropdown-toggle"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                  ><i class="fa fa-tasks"></i
-                  ><span class="badge blue1">8</span></a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="notification_header">
-                      <h3>You have 8 pending task</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="task-info">
-                        <span class="task-desc">Database update</span
-                        ><span class="percentage">40%</span>
-                        <div class="clearfix"></div>
-                      </div>
-                      <div class="progress progress-striped active">
-                        <div class="bar yellow" style="width: 40%"></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="task-info">
-                        <span class="task-desc">Dashboard done</span
-                        ><span class="percentage">90%</span>
-                        <div class="clearfix"></div>
-                      </div>
-                      <div class="progress progress-striped active">
-                        <div class="bar green" style="width: 90%"></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="task-info">
-                        <span class="task-desc">Mobile App</span
-                        ><span class="percentage">33%</span>
-                        <div class="clearfix"></div>
-                      </div>
-                      <div class="progress progress-striped active">
-                        <div class="bar red" style="width: 33%"></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="task-info">
-                        <span class="task-desc">Issues fixed</span
-                        ><span class="percentage">80%</span>
-                        <div class="clearfix"></div>
-                      </div>
-                      <div class="progress progress-striped active">
-                        <div class="bar blue" style="width: 80%"></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="notification_bottom">
-                      <a href="#">See all pending tasks</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <div class="clearfix"></div>
-          </div>
-          <!--notification menu end -->
-          <div class="clearfix"></div>
-        </div>
-        <div class="header-right">
-          <!--search-box-->
-          <div class="search-box">
-            <form class="input">
-              <input
-                class="sb-search-input input__field--madoka"
-                placeholder="Search..."
-                type="search"
-                id="input-31"
-              />
-              <label class="input__label" for="input-31">
-                <svg
-                  class="graphic"
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 404 77"
-                  preserveAspectRatio="none"
-                >
-                  <path d="m0,0l404,0l0,77l-404,0l0,-77z" />
-                </svg>
-              </label>
-            </form>
-          </div>
-          <!--//end-search-box-->
-          <div class="profile_details">
-            <ul>
-              <li class="dropdown profile_details_drop">
-                <a
-                  href="#"
-                  class="dropdown-toggle"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <div class="profile_img">
-                    <span class="prfil-img"
-                      ><img src="images/2.jpg" alt="" />
-                    </span>
-                    <div class="user-name">
-                      <p>Admin Name</p>
-                      <span>Administrator</span>
-                    </div>
-                    <i class="fa fa-angle-down lnr"></i>
-                    <i class="fa fa-angle-up lnr"></i>
+                  </nav>
+                </aside>
+              </div>
+              <div class="sticky-header header-section">
+                <div class="header-left">
+                  <button id="showLeftPush"><i class="fa fa-bars"></i></button>
+                  <div class="profile_details_left">
+                    <ul class="nofitications-dropdown">
+                      <li class="dropdown head-dpdn">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                          aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <div class="notification_header">
+                              <h3>You have 3 new messages</h3>
+                            </div>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/1.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li class="odd">
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/4.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/3.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/2.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li>
+                            <div class="notification_bottom">
+                              <a href="#">See all messages</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown head-dpdn">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i
+                          ><span class="badge blue">4</span></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <div class="notification_header">
+                              <h3>You have 3 new notification</h3>
+                            </div>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/4.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li class="odd">
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/1.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/3.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="user_img">
+                                <img src="images/2.jpg" alt="" />
+                              </div>
+                              <div class="notification_desc">
+                                <p>Lorem ipsum dolor amet</p>
+                                <p><span>1 hour ago</span></p>
+                              </div>
+                              <div class="clearfix"></div>
+                            </a>
+                          </li>
+                          <li>
+                            <div class="notification_bottom">
+                              <a href="#">See all notifications</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown head-dpdn">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">8</span></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <div class="notification_header">
+                              <h3>You have 8 pending task</h3>
+                            </div>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="task-info">
+                                <span class="task-desc">Database update</span
+                                ><span class="percentage">40%</span>
+                                <div class="clearfix"></div>
+                              </div>
+                              <div class="progress progress-striped active">
+                                <div class="bar yellow" style="width: 40%"></div>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="task-info">
+                                <span class="task-desc">Dashboard done</span
+                                ><span class="percentage">90%</span>
+                                <div class="clearfix"></div>
+                              </div>
+                              <div class="progress progress-striped active">
+                                <div class="bar green" style="width: 90%"></div>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="task-info">
+                                <span class="task-desc">Mobile App</span
+                                ><span class="percentage">33%</span>
+                                <div class="clearfix"></div>
+                              </div>
+                              <div class="progress progress-striped active">
+                                <div class="bar red" style="width: 33%"></div>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="task-info">
+                                <span class="task-desc">Issues fixed</span
+                                ><span class="percentage">80%</span>
+                                <div class="clearfix"></div>
+                              </div>
+                              <div class="progress progress-striped active">
+                                <div class="bar blue" style="width: 80%"></div>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <div class="notification_bottom">
+                              <a href="#">See all pending tasks</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
                     <div class="clearfix"></div>
                   </div>
-                </a>
-                <ul class="dropdown-menu drp-mnu">
-                  <li>
-                    <a href="#"><i class="fa fa-cog"></i> Settings</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-user"></i> My Account</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-suitcase"></i> Profile</a>
-                  </li>
-                  <li>
-                    <form action="{{route('logout')}}" method="POST">
-                        @csrf
-                        <input type="submit" class="btn btn-danger btn-sm" value="logout" />
+                  <div class="clearfix"></div>
+                </div>
+                <div class="header-right">
+                  <div class="search-box">
+                    <form class="input">
+                      <input class="sb-search-input input__field--madoka" placeholder="Search..." type="search" id="input-31"/>
+                      <label class="input__label" for="input-31">
+                        <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                          <path d="m0,0l404,0l0,77l-404,0l0,-77z" />
+                        </svg>
+                      </label>
                     </form>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      <!-- //header-ends -->
-      <!-- main content start-->
-      <div id="page-wrapper">
-        <div class="main-page">
-          <div class="col_3">
-            <div class="col-md-3 widget widget1">
-              <div class="r3_counter_box">
-                <i class="pull-left fa fa-file icon-rounded"></i>
-                <div class="stats">
-                  <h5><strong>{{$category_total}}</strong></h5>
-                  <span>Danh mục phim</span>
+                  </div>
+                  <div class="profile_details">
+                    <ul>
+                      <li class="dropdown profile_details_drop">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                          <div class="profile_img">
+                            <span class="prfil-img"
+                              ><img src="images/2.jpg" alt="" />
+                            </span>
+                            <div class="user-name">
+                              <p>{{Auth::user()->name}}</p>
+                              <span>Administrator</span>
+                            </div>
+                            <i class="fa fa-angle-down lnr"></i>
+                            <i class="fa fa-angle-up lnr"></i>
+                            <div class="clearfix"></div>
+                          </div>
+                        </a>
+                        <ul class="dropdown-menu drp-mnu">
+                          <li>
+                            <a href="#"><i class="fa fa-cog"></i> Settings</a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="fa fa-user"></i> My Account</a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="fa fa-suitcase"></i> Profile</a>
+                          </li>
+                          <li>
+                            <form action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <input type="submit" class="btn btn-danger btn-sm" value="logout" />
+                            </form>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div id="page-wrapper">
+                <div class="main-page">
+                  <div class="col_3">
+                    <div class="col-md-3 widget widget1">
+                      <div class="r3_counter_box">
+                        <i class="pull-left fa fa-file icon-rounded"></i>
+                        <div class="stats">
+                          <h5><strong>{{$category_total}}</strong></h5>
+                          <span>Danh mục phim</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 widget widget1">
+                      <div class="r3_counter_box">
+                        <i class="pull-left fa fa-child user1 icon-rounded"></i>
+                        <div class="stats">
+                          <h5><strong>{{$genre_total}}</strong></h5>
+                          <span>Thể loại</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 widget widget1">
+                      <div class="r3_counter_box">
+                        <i class="pull-left fa fa-globe user2 icon-rounded"></i>
+                        <div class="stats">
+                          <h5><strong>{{$country_total}}</strong></h5>
+                          <span>Quốc gia</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 widget widget1">
+                      <div class="r3_counter_box">
+                        <i class="pull-left fa fa-film dollar1 icon-rounded"></i>
+                        <div class="stats">
+                          <h5><strong>{{$movie_total}}</strong></h5>
+                          <span>Phim</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="row-one widgettable">
+                    
+                  </div>
+                 
+                  <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+                  <script src="{{asset('admin/js/amcharts.js')}}"></script>
+                  <script src="{{asset('admin/js/serial.js')}}"></script>
+                  <script src="{{asset('admin/js/export.min.js')}}"></script>
+                  <link rel="stylesheet" href="css/export.css" type="text/css" media="all"/>
+                  <script src="{{asset('admin/js/light.js')}}"></script>
+                  <script src="{{asset('admin/js/index1.js')}}"></script>
+                  
+                  <div class="container-fluid">
+                    @yield('content')
+                    <div class="clearfix"></div>
+                  </div>
                 </div>
               </div>
+
+              <div class="footer">
+                <p>
+                  &copy; 2023 BEAR MOVIE.NET. All Rights Reserved | Design by
+                  <a href="https://w3layouts.com/" target="_blank">TranMinhHoang</a>
+                </p>
+              </div>
+
             </div>
-            <div class="col-md-3 widget widget1">
-              <div class="r3_counter_box">
-                <i class="pull-left fa fa-child user1 icon-rounded"></i>
-                <div class="stats">
-                  <h5><strong>{{$genre_total}}</strong></h5>
-                  <span>Thể loại</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 widget widget1">
-              <div class="r3_counter_box">
-                <i class="pull-left fa fa-globe user2 icon-rounded"></i>
-                <div class="stats">
-                  <h5><strong>{{$country_total}}</strong></h5>
-                  <span>Quốc gia</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 widget widget1">
-              <div class="r3_counter_box">
-                <i class="pull-left fa fa-film dollar1 icon-rounded"></i>
-                <div class="stats">
-                  <h5><strong>{{$movie_total}}</strong></h5>
-                  <span>Phim</span>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="col-md-3 widget">
-              <div class="r3_counter_box">
-                <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
-                <div class="stats">
-                  <h5><strong>1450</strong></h5>
-                  <span>Total Users</span>
-                </div>
-              </div>
-            </div> -->
-            <div class="clearfix"></div>
-          </div>
-          <div class="row-one widgettable">
-            
-          </div>
-         
-          <!-- for amcharts js -->
-          <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-          <script src="{{asset('admin/js/amcharts.js')}}"></script>
-          <script src="{{asset('admin/js/serial.js')}}"></script>
-          <script src="{{asset('admin/js/export.min.js')}}"></script>
-          <link
-            rel="stylesheet"
-            href="css/export.css"
-            type="text/css"
-            media="all"
-          />
-          <script src="{{asset('admin/js/light.js')}}"></script>
-          <!-- for amcharts js -->
-          <script src="{{asset('admin/js/index1.js')}}"></script>
-          
-          <div class="container-fluid">
-            @yield('content')
-            <div class="clearfix"></div>
-          </div>
-        </div>
-      </div>
-      <!--footer-->
-      <div class="footer">
-        <p>
-          &copy; 2023 BEAR MOVIE.NET. All Rights Reserved | Design by
-          <a href="https://w3layouts.com/" target="_blank">TranMinhHoang</a>
-        </p>
-      </div>
-      <!--//footer-->
-    </div>
     @else
-    <!-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div> -->
     @yield('content_login')
     @endif
     <!-- new added graphs chart js-->

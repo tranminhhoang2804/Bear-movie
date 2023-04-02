@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layout')
 @section('content')	
 
 <div class="panel-heading container p-2">
@@ -55,19 +55,10 @@
                     @endforeach
                 </div>
             </section>
+            <div class="text-center d-flex justify-content-center">
+                {!!$movie -> links("pagination::bootstrap-4") !!}
+            </div>
         </div>
         <div class="clearfix"></div>
-        <nav aria-label="..." class="container text-center d-flex justify-content-center mt-3">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link bg-warning text-dark fw-bold">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link bg-warning text-dark fw-bold" href="#">1</a></li>
-              <li class="page-item"><a class="page-link bg-warning text-dark fw-bold" href="#">2</a></li>
-              <li class="page-item"><a class="page-link bg-warning text-dark fw-bold" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link bg-warning text-dark fw-bold" href="#">Next</a>
-              </li>
-            </ul>
-        </nav>          
+                  
 @endsection
