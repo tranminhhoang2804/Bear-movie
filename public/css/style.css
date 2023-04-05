@@ -1,0 +1,320 @@
+.body_main {
+    background-image: url(../img/background.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bear-logo {
+    width: 20%;
+}
+
+.movie-header {
+    background-color: #333333;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-image {
+    width: 25%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    list-style: none;
+    display: none;
+    position: absolute;
+    background-color: black;
+    border-radius: 15px;
+    padding: 1px;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    padding: 5px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+  .dropdown-content a:hover{
+    background-color: #333333;
+    color: #0000;
+  }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.visible-xs-inline {
+    text-decoration: none;
+}
+/*------------------------------------------*/
+
+/* ---------------------------------------- */
+.panel-heading {
+    border-radius: 10px;
+    background-color: #333333;
+}
+.panel-heading-title, .movie-title {
+    text-decoration: none;
+}
+.section-heading {
+    border-top: 2px solid #ffffff23;
+    border-bottom: 2px solid #ffffff23;
+}
+/* ---------------------------------------- */
+.hot-movie {
+    margin: 0 auto;
+}
+.button-watch {
+    border-bottom: 2px solid #ffffff23;
+}
+/* ---------------------------------------- */
+.movie-button {
+    text-decoration: none;
+    border-radius: 7px;
+}
+/* ---------------------------------------- */
+.halim-thumb {
+    position: relative;
+}
+
+.status {
+    left: 0;
+    top: 0;
+    background: #365979;
+    /* z-index: 1; */
+}
+.quality {
+    color: #fff;
+    background: #365979;
+    padding: 3px 7px;
+    font-size: small;
+    border-radius: 5px;
+}
+.episode {
+    right: 0;
+    top: 0;
+    background: #f11b1b;
+    color: #fff;
+    padding: 2px 5px;
+    /* z-index: 9; */
+}
+.movie-episode {
+    font-size: small;
+    background: #f11b1b;
+    color: #fff;
+    padding: 3px 7px;
+    border-radius: 5px;
+    /* z-index: 9; */
+}
+.list-info-group-item {
+    list-style: none;
+}
+.list-info-group-item a {
+    text-decoration: none;
+    color: #ffda05;
+}
+.status, .episode {
+    padding: 3px 6px;
+    position: absolute;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+}
+.halim-post-title-box {
+    position: absolute;
+    line-height: 18px;
+    padding: 80px 0 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(6,6,6,.24) 30%,rgba(0,0,0,.8) 100%);
+}
+.halim-post-title {
+    position: absolute;
+    background: transparent;
+    line-height: 18px;
+    padding: 8px 10px 4px;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+}
+.halim-btn {
+    background: #fff;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+.halim-episode{
+    list-style: none;
+}
+.section-heading a {
+    text-decoration: none;
+}
+.sub-title {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+.card-name {
+    text-shadow:1px 1px 2px #000000;
+}
+.film-title {
+    border-radius: 10px;
+    box-shadow: 2px 2px 25px #ffcf24;
+}
+.section-container {
+    background-color: #333333bb;
+    padding: 5px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+/********* profile details **********/
+ul.dropdown-menu.drp-mnu i.fa {
+    margin-right: 0.5em;
+    color: #629aa9;
+}
+ul.dropdown-menu {
+    padding: 1em;
+    min-width: 280px;
+    top:101%;
+}
+.dropdown-menu > li > a {
+    padding: 3px 15px;
+    font-size: 1em;
+    letter-spacing: .5px;
+}
+.profile_details {
+    float: right;
+}
+.profile_details_drop .fa.fa-angle-up{
+    display:none;
+}
+.profile_details_drop.open .fa.fa-angle-up{
+    display:block;
+}
+.profile_details_drop.open .fa.fa-angle-down{
+    display:none;
+}
+.profile_details_drop a.dropdown-toggle {
+    display:block;
+    padding: 0.2em 3em 0 0em;
+}
+.profile_img span.prfil-img{
+    float:left;
+}
+.user-name{
+     float:left;
+     margin-top:8px;
+     margin-left:11px;
+     height:35px;
+}
+.profile_details ul li{
+    list-style-type:none;
+    position:relative;
+    margin-right: 30px;
+}
+.profile_details li a i.fa.lnr {
+    position: absolute;
+    top: 34%;
+    right: 8%;
+    color: #333;
+    font-size: 1.6em;
+}
+span.prfil-img img,.activity-img img,.media>.pull-left img,.inbox-page img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.profile_details ul li ul.dropdown-menu.drp-mnu {
+    padding: 1em;
+    min-width: 190px;
+    top: 122%;
+    left:0%;
+}
+ul.dropdown-menu.drp-mnu li {
+    list-style-type: none;
+    padding: 3px 0;
+}
+.user-name p{
+    font-size:1em;
+    color: #F2B33F;
+    line-height:1em;
+    font-weight:700;
+}
+.user-name span {
+    font-size: .75em;
+    color: #424f63;
+    font-weight: normal;
+    margin-top: .3em;
+}
+.section {
+    background-image: url('/img/angry-bird.jpg');
+    background-size: cover;
+    height: 750px;
+}
+.title-group{
+    margin: 10rem;
+}
+.title-text {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+}
+.section-first {
+    height: 35rem;
+    border-top: 10px solid #333333;
+    border-bottom: 10px solid #333333;
+    padding-top: 5rem;
+}
+.start-button {
+    transition: all 0.2s;
+    animation-name: scaling;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+@keyframes scaling {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 1.2;
+        box-shadow: 0 0 20px rgb(255, 221, 72);
+    }
+}
+.register-button {
+    transition: all .5s ease;
+}
+.register-button:hover {
+    transform: scale(1.1);
+}
+/* ------------------------------------------- */
+.bear-footer {
+    width: 60%;
+}
+.bear-footer-title {
+    width: 40%;
+}
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.200);
+    padding-top: 10px;
+}
+.contact {
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+.contact:hover {
+    color: #ffda05;
+}
+.copyright p {
+    font-size: smaller;
+}
