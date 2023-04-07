@@ -225,6 +225,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </li>
                           </ul>
                         </li>
+                        <li class="treeview">
+                          <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>QUẢN LÝ USERS</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li>
+                              <a href="{{route('user.create')}}"><i class="fa fa-angle-right"></i>Thêm user</a>
+                            </li>
+                            <li>
+                              <a href="{{route('user.index')}}"><i class="fa fa-angle-right"></i>Danh sách user</a>
+                            </li>
+                          </ul>
+                        </li>
                       </ul>
                     </div>
                   </nav>
