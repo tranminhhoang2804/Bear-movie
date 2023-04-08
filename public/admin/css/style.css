@@ -269,6 +269,9 @@ ul.dropdown-menu{
     transition: all 0.5s ease-out;
 }
 /*--//side-menu--*/
+.title-banner {
+    margin-top:50px;
+}
 /* ----Logo----*/
 .logo {
     background: #1e282c;

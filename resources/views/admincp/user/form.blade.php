@@ -36,9 +36,9 @@
                         {!! Form::select('role', ['1'=>'admin','2'=>'users'], isset($user) ? $user->role : '' , ['class'=>'form-control']) !!}
                     </div>
                     @if(!isset($user))
-                        {!! Form::submit('Thêm danh mục', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Thêm người dùng', ['class'=>'btn btn-success']) !!}
                     @else
-                        {!! Form::submit('Cập nhật danh mục', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Cập nhật người dùng', ['class'=>'btn btn-success']) !!}
                     @endif
 
                     {!! Form::close() !!}

@@ -5,11 +5,11 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Tên user</th>
+                      <th scope="col">Tên người dùng</th>
                       <th scope="col">Email</th>
-                      <th scope="col">Password</th>
-                      <th scope="col">Role</th>
-                      <th scope="col">Manage</th>
+                      <th scope="col">Mật khẩu</th>
+                      <th scope="col">Quyền</th>
+                      <th scope="col">Quản lý</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -20,7 +20,11 @@
                       <td>{{$users->name}}</td>
                       <td>{{$users->email}}</td>
                       <td>{{$users->password}}</td>
-                      <td>{{$users->role}}</td>
+                      <td>
+                        @if($users->role)
+                        Khách Hàng
+                        @endif
+                      </td>
                       <td>
                           {!! Form::open([
                             'method'=>'DELETE',

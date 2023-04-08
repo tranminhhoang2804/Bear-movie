@@ -20,7 +20,7 @@
                                 </a>
                             </div>
 
-                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">ĐĂNG KÝ</p>
 
                             <form class="mx-1 mx-md-4" method="POST" action="{{ route('register') }}">
                             @csrf
@@ -28,8 +28,8 @@
                               <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
-                                  <label class="form-label" for="name">Your Name</label>
-                                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="put your name">
+                                  <label class="form-label" for="name">Tên người dùng</label>
+                                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Vui lòng nhập tên của bạn">
 
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
@@ -42,8 +42,8 @@
                               <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
-                                  <label class="form-label" for="email">Your Email</label>
-                                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="put your email">
+                                  <label class="form-label" for="email">Email</label>
+                                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Vui lòng nhập email của bạn">
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -56,8 +56,8 @@
                               <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
-                                  <label class="form-label" for="password">Password</label>
-                                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="put your password">
+                                  <label class="form-label" for="password">Mật khẩu</label>
+                                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Vui lòng nhập mật khẩu của bạn">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -70,25 +70,25 @@
                               <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
-                                  <label class="form-label" for="form3Example4cd">Repeat your password</label>
-                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="re password">
+                                  <label class="form-label" for="form3Example4cd">Xác nhận mật khẩu</label>
+                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Vui lòng nhập lại mật khẩu để xác thực">
                                 </div>
                               </div>
 
                               <div class="form-check d-flex justify-content-center mb-5">
                                 <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                                 <label class="form-check-label" for="form2Example3">
-                                  I agree all statements in <a href="#!">Terms of service</a>
+                                  Tôi đồng ý với <a href="#!">Điều khoản sử dụng</a>
                                 </label>
                               </div>
 
                               <div class="col-md-6 offset-md-4">
                                             <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">
-                                                {{ __('Register') }}
+                                                {{ __('Đăng ký') }}
                                             </button>
                                         </div>
                         <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2">Return Sign in?</p>
+                          <p class="mb-0 me-2">Bạn đã có tài khoản?</p>
                               <a class="nav-link text-warning" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </div>
                             </form>

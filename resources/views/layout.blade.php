@@ -22,12 +22,16 @@
                 <div class="container">
                     <a class="navbar-brand col-3" href="{{route('homepage')}}"><img class="bear-logo img-thumbnail" src="{{asset('img/bear_logo.jpg')}}" title="Bear movie"><img class="bear-footer" src="{{asset('img/bear-footer.png')}}" title="Bear movie"></a>
                     <form class="d-flex col-5 gap-2" action="{{route('tim-kiem')}}" method="GET">
-                        <input class="form-control" type="text" name="search" id="timkiem" placeholder="Search" autocomplete="off">
+                        <input class="form-control" type="text" name="search" id="timkiem" placeholder="Tìm kiếm" autocomplete="off">
                         <button class="btn btn-warning text-dark fw-bold">Search</button>
                     </form>
                     <ul class="navbar-nav d-flex justify-content-end col-1 gap-2">
                         <li class="nav-item">
+                            @if (Auth::user()->role==1)
+                             <p class="text-light"><a style="text-decoration: none;" class="text-light" href="{{route('home')}}">{{Auth::user()->name}}</a></p>
+                             @else
                              <p class="text-light">{{Auth::user()->name}}</p>
+                             @endif
                              <form action="{{route('logout')}}" method="POST">
                                 @csrf
                                 <input type="submit" class="btn btn-danger btn-sm" value="logout" />

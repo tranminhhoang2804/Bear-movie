@@ -44,9 +44,9 @@
                     @endif
 
                     @if(!isset($episode))
-                        {!! Form::submit('Thêm', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Thêm tập phim', ['class'=>'btn btn-success']) !!}
                     @else
-                        {!! Form::submit('Cập nhật', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Cập nhật tập phim', ['class'=>'btn btn-success']) !!}
                     @endif
 
                     {!! Form::close() !!}

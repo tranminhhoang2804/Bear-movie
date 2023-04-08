@@ -136,7 +136,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                       </button>
                       <h1>
                         <a class="navbar-brand" href="{{url('/layout')}}">BEAR MOVIE
-                            <span class="dashboard_text">admin control</span></a>
+                            <span class="dashboard_text">Bảng điều khiển</span></a>
                       </h1>
                     </div>
                     <div
@@ -146,7 +146,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                       <ul class="sidebar-menu">
                         <li class="header">QUẢN LÝ WEB PHIM</li>
                         <li class="treeview">
-                          <a href="index.html">
+                          <a href="{{route('home')}}">
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                           </a>
                         </li>
@@ -228,15 +228,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li class="treeview">
                           <a href="#">
                             <i class="fa fa-laptop"></i>
-                            <span>QUẢN LÝ USERS</span>
+                            <span>QUẢN LÝ NGƯỜI DÙNG</span>
                             <i class="fa fa-angle-left pull-right"></i>
                           </a>
                           <ul class="treeview-menu">
                             <li>
-                              <a href="{{route('user.create')}}"><i class="fa fa-angle-right"></i>Thêm user</a>
+                              <a href="{{route('user.create')}}"><i class="fa fa-angle-right"></i>Thêm người dùng</a>
                             </li>
                             <li>
-                              <a href="{{route('user.index')}}"><i class="fa fa-angle-right"></i>Danh sách user</a>
+                              <a href="{{route('user.index')}}"><i class="fa fa-angle-right"></i>Danh sách người dùng</a>
                             </li>
                           </ul>
                         </li>
@@ -500,7 +500,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               </div>
               <div id="page-wrapper">
                 <div class="main-page">
-                  <div class="col_3">
+                  <!-- <div class="col_3">
                     <div class="col-md-3 widget widget1">
                       <div class="r3_counter_box">
                         <i class="pull-left fa fa-file icon-rounded"></i>
@@ -538,7 +538,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                       </div>
                     </div>
                     <div class="clearfix"></div>
-                  </div>
+                  </div> -->
                   <div class="row-one widgettable">
                     
                   </div>

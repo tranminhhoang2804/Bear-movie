@@ -20,11 +20,11 @@
 
                       <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <p class="text-center">Please login to your account !</p>
+                        <p class="text-center">Vui lòng đăng nhập để sử dụng các dịch vụ của Web!</p>
 
                         <div class="form-outline mb-4">
-                          <label class="form-label" for="form2Example11">Username</label>
-                            <input id="form2Example11" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Phone number or email address">
+                          <label class="form-label" for="form2Example11">Email</label>
+                            <input id="form2Example11" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="vui lòng nhập địa chỉ email của bạn">
                             @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -33,8 +33,8 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                          <label class="form-label" for="form2Example22">Password</label>
-                          <input id="form2Example22" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                          <label class="form-label" for="form2Example22">Mật khẩu</label>
+                          <input id="form2Example22" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="*********">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Ghi nhớ mật khẩu') }}
                                     </label>
                                 </div>
                             </div>
@@ -57,13 +57,13 @@
                             <div class="col-md-12">
                               <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">
-                                    {{ __('Login') }}
+                                    {{ __('Đăng nhập') }}
                                 </button>
                               </div>
                               <div class="d-flex justify-content-center">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Quên mật khẩu?') }}
                                     </a>
                                 @endif
                               </div>
@@ -71,9 +71,9 @@
                         </div>
                         @guest
                         <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2">Don't have an account?</p>
+                          <p class="mb-0 me-2">Bạn không có tài khoản?</p>
                            @if (Route::has('register'))
-                              <a class="nav-link text-warning" href="{{ route('register') }}">{{ __('Register') }}</a>
+                              <a class="nav-link text-warning" href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
                                @endif
                         </div>
                         @endguest
@@ -84,7 +84,7 @@
                   </div>
                   <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 class="mb-4">We are more than just a company</h4>
+                      <h4 class="mb-4 text-center">THƯỞNG THỨC TRỌN VẸN TỪNG PHÚT GIÂY</h4>
                       <p class="small mb-0 lh-lg">BEAR MOVIE là dịch vụ phát trực tuyến mang đến đa dạng các loại chương trình truyền hình, phim, anime, phim tài liệu đoạt giải thưởng và nhiều nội dung khác trên hàng nghìn thiết bị có kết nối Internet. Bạn có thể xem bao nhiêu tùy thích, bất cứ lúc nào bạn muốn mà không gặp phải một quảng cáo nào – tất cả chỉ với một mức giá thấp hàng tháng. Luôn có những nội dung mới để bạn khám phá và những chương trình truyền hình, phim mới được bổ sung mỗi tuần!</p>
                     </div>
                   </div>
