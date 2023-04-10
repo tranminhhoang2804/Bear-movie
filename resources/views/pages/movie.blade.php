@@ -95,8 +95,8 @@
                               Updating
                            @endif
                      </li>
-                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Đạo diễn</span> : <a class="director" rel="nofollow" href="https://phimhay.co/dao-dien/cate-shortland" title="Cate Shortland">Cate Shortland</a></li>
-                       <li class="list-info-group-item last-item text-warning" style="-overflow: hidden;-display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-flex: 1;-webkit-box-orient: vertical;"><span class="fw-bold text-light">Diễn viên</span> : <a href="" rel="nofollow" title="C.C. Smiff">C.C. Smiff</a>, <a href="" rel="nofollow" title="David Harbour">David Harbour</a>, <a href="" rel="nofollow" title="Erin Jameson">Erin Jameson</a>, <a href="" rel="nofollow" title="Ever Anderson">Ever Anderson</a>, <a href="" rel="nofollow" title="Florence Pugh">Florence Pugh</a>, <a href="" rel="nofollow" title="Lewis Young">Lewis Young</a>, <a href="" rel="nofollow" title="Liani Samuel">Liani Samuel</a>, <a href="" rel="nofollow" title="Michelle Lee">Michelle Lee</a>, <a href="" rel="nofollow" title="Nanna Blondell">Nanna Blondell</a>, <a href="" rel="nofollow" title="O-T Fagbenle">O-T Fagbenle</a></li>
+                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Đạo diễn</span> : {{$movie->daodien}}</li>
+                       <li class="list-info-group-item last-item text-warning" style="-overflow: hidden;-display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-flex: 1;-webkit-box-orient: vertical;"><span class="fw-bold text-light">Diễn viên</span> : {{$movie->dienvien}} </li>
                        <li></li>
                        <li class="list-info-group-item text-warning">  
                         @if($movie->resolution!=5)

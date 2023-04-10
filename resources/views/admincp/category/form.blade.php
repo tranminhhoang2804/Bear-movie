@@ -40,8 +40,9 @@
                     @else
                         {!! Form::submit('Cập nhật danh mục', ['class'=>'btn btn-success']) !!}
                     @endif
-
                     {!! Form::close() !!}
+                    <br>
+                    <div class="btn btn-danger"><a style="color:white;" href="{{route('category.index')}}">Hủy bỏ</div>
                 </div>
             </div>
         </div>

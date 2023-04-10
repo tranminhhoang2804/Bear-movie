@@ -41,6 +41,14 @@
                         {!! Form::text('slug', isset($movie) ? $movie->slug : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'convert_slug']) !!}
                     </div>
                     <div class="form-group">
+                        {!! Form::label('daodien','Đạo diễn',[]) !!}
+                        {!! Form::text('daodien', isset($movie) ? $movie->daodien : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('dienvien','Diễn viên',[]) !!}
+                        {!! Form::text('dienvien', isset($movie) ? $movie->dienvien : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                    </div>
+                    <div class="form-group">
                         {!! Form::label('description','Mô tả',[]) !!}
                         {!! Form::textarea('description', isset($movie) ? $movie->description : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'description']) !!}
                     </div>

@@ -10,19 +10,19 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Tên phim</th>
-                      <th scope="col">Tags phim</th>
                       <th scope="col">Thời lượng phim</th>
                       <th scope="col">Hình ảnh</th>
                       <th scope="col">Phim nổi bật</th>
                       <th scope="col">Định dạng</th>
                       <th scope="col">Phụ đề</th>
-                      <th scope="col">Slug</th>
                       <th scope="col">Active</th>
                       <th scope="col">Danh mục</th>
                       <th scope="col">Thuoc loai phim</th>
                       <th scope="col">Thể loại</th>
                       <th scope="col">Quốc gia</th>
                       <th scope="col">Số tập phim</th>
+                      <th scope="col">Đạo diễn</th>
+                      <th scope="col">Diễn viên</th>
                       <th scope="col">Ngày tạo</th>
                       <th scope="col">Ngày cập nhật</th>
                       <th scope="col">Năm</th>
@@ -34,7 +34,6 @@
                     <tr>
                       <th scope="row">{{$key}}</th>
                       <td>{{$cate->title}}</td>
-                      <td>{{$cate->tags}}</td>
                       <td>{{$cate->thoiluong}}</td>
                        <td><img width="200px" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
                        <td>
@@ -66,7 +65,6 @@
                             Thuyết minh
                         @endif
                        </td>
-                      <td>{{$cate->slug}}</td>
                       <td>
                           @if($cate->status)
                             Hiển thị
@@ -92,6 +90,8 @@
                       
                       <td>{{$cate->country->title}}</td>
                       <td>{{$cate->sotap}}</td>
+                      <td>{{$cate->daodien}}</td>
+                      <td>{{$cate->dienvien}}</td>
                       <td>{{$cate->ngaytao}}</td>
                       <td>{{$cate->ngaycapnhat}}</td>
                       <td>

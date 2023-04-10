@@ -4,12 +4,12 @@
             <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Tên quốc gia</th>
-                      <th scope="col">Mô tả</th>
-                      <th scope="col">Slug</th>
-                      <th scope="col">Active</th>
-                      <th scope="col">Manage</th>
+                      <th class="bg-primary" scope="col">#</th>
+                      <th class="bg-info" scope="col">Tên quốc gia</th>
+                      <th class="bg-primary" scope="col">Mô tả</th>
+                      <th class="bg-info" scope="col">Slug</th>
+                      <th class="bg-primary" scope="col">Active</th>
+                      <th class="bg-info" scope="col">Manage</th>
                     </tr>
                   </thead>
                   <tbody>
