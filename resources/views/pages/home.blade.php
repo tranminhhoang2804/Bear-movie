@@ -6,7 +6,7 @@
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
                       <a href="#" title="Phim Chiếu Rạp">
-                      <span class="fw-bolder text-warning">» Phim sắp chiếu</span>
+                      <span class="fw-bolder text-dark h5">» Phim hot</span>
                       </a>
                    </div>               		
 	               		<div class="halim-box row">
@@ -59,7 +59,7 @@
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
                       <a href="#" title="Phim Chiếu Rạp">
-                      <span class="fw-bolder text-warning">» {{$cate_home->title}}</span>
+                      <span class="fw-bolder text-dark h5">» {{$cate_home->title}}</span>
                       </a>
                    </div>               		
 	               		<div class="halim-box row">

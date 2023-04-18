@@ -42,9 +42,11 @@ class UserController extends Controller
         $user->email=$data['email'];
         $user->password= bcrypt($data['password']);
         $user->role=$data['role'];
+        $user->phone=$data['phone'];
         $user->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $user->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $user->save();
+        toastr()->success('Thành công!','Thêm người dùng thành công!');
         return redirect()->route('user.index');
     }
 
@@ -86,8 +88,10 @@ class UserController extends Controller
         $user->email=$data['email'];
         $user->password=bcrypt($data['password']);
         $user->role=$data['role'];
+        $user->phone=$data['phone'];
         $user->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $user->save();
+        toastr()->success('Thành công!','Cập nhật người dùng thành công!');
         return redirect()->route('user.index');
     }
 
@@ -100,6 +104,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
+        toastr()->success('Thành công!','Xóa người dùng thành công!');
         return redirect()->back();
     }
 }

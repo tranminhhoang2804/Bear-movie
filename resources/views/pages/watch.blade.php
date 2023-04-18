@@ -22,7 +22,7 @@
                      <style type="text/css">
                         .iframe_phim iframe {
                            width: 100%;
-                           height: 500px;
+                           height: 600px;
                         }
                      </style>
                      <div class="iframe_phim"> 
@@ -33,20 +33,20 @@
                 <div class="button-watch container col-10 d-flex justify-content-end">
                       <div id="autonext" class="btn-cs autonext ms-2 me-2">
                          <i class="icon-autonext-sm"></i>
-                         <span class="text-light"><i class="hl-next"></i> Autonext: <span id="autonext-status">On</span></span>
+                         <span class="text-secondary"><i class="hl-next"></i> Tự động chuyển tập: <span class="text-dark" id="autonext-status">On</span></span>
                       </div>
-                      <div id="explayer" class="hidden-xs text-light ms-2 me-2"><i class="hl-resize-full"></i>
-                         Expand 
+                      <div id="explayer" class="hidden-xs text-secondary ms-2 me-2"><i class="hl-resize-full"></i>
+                         Mở rộng 
                       </div>
-                      <div id="toggle-light" class="text-light ms-2 me-2"><i class="hl-adjust"></i>
-                         Light Off 
+                      <div id="toggle-light" class="text-dark ms-2 me-2"><i class="hl-adjust"></i>
+                         Chế độ tắt đèn 
                       </div>
-                      <div id="report" class="halim-switch text-light text-light ms-2 me-2"><i class="hl-attention"></i> Report</div>
-                      <div class="luotxem text-light ms-2 me-2"><i class="hl-eye"></i>
-                         <span class="text-light">1K</span> lượt xem 
+                      <div id="report" class="halim-switch text-light text-secondary ms-2 me-2"><i class="hl-attention"></i> Phản hồi</div>
+                      <div class="luotxem text-secondary ms-2 me-2"><i class="hl-eye"></i>
+                         <span class="text-secondary">1K</span> lượt xem 
                       </div>
                       <div class="luotxem ms-2 me-2">
-                         <a class="visible-xs-inline text-light" data-toggle="collapse" href="#moretool" aria-expanded="false" aria-controls="moretool"><i class="hl-forward"></i> Share</a>
+                         <a class="visible-xs-inline text-secondary" data-toggle="collapse" href="#moretool" aria-expanded="false" aria-controls="moretool"><i class="hl-forward"></i> Chia sẻ</a>
                       </div>
                 </div>
                 <div class="collapse" id="moretool">
@@ -65,7 +65,7 @@
                       </div>
                    </a>
                    <div class="title-wrapper-xem p-3">
-                      <p class="h4"><a href="#" title="{{$movie->title}}" class="text-warning movie-title">{{$movie->title}}</a></h1>
+                      <p class="h4"><a href="#" title="{{$movie->title}}" class="text-dark fw-bold movie-title">{{$movie->title}}</a></h1>
                    </div>
                 </div>
                 <div class="entry-content htmlwrap clearfix collapse" id="expand-post-content">
@@ -78,7 +78,7 @@
 
                 <div id="halim-list-server">
                    <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active sub-title server-1 bg-warning ps-2 pe-2"><a class="movie-title text-dark fw-bold" href="#server-0" aria-controls="server-0" role="tab" data-toggle="tab"><i class="hl-server"></i>
+                      <li role="presentation" class="active sub-title server-1 ps-3 pe-3 pt-1 pb-1"><a class="movie-title text-light fw-bold" href="#server-0" aria-controls="server-0" role="tab" data-toggle="tab"><i class="hl-server"></i>
                                     @if($movie->phude==0)
                                         Vietsub
                                     @else
@@ -91,7 +91,7 @@
                          <div class="halim-server mt-3">
                             <ul class="halim-list-eps d-flex justify-content-start">
                               @foreach($movie->episode as $key => $sotap)
-                              <a href="{{url('xem-phim/'.$movie->slug.'/tap-'.$sotap->episode)}}">
+                              <a class="text-secondary fw-bold" style="text-decoration: none;" href="{{url('xem-phim/'.$movie->slug.'/tap-'.$sotap->episode)}}">
                                <li class="halim-episode"><span class="halim-btn halim-btn-2 {{$tapphim==$sotap->episode ? 'active' : ''}} halim-info-1-1 box-shadow" data-post-id="37976" data-server="1" data-episode="1" data-position="first" data-embed="0" data-title="Xem phim {{$movie->title}} - Tập {{$sotap->episode}} - {{$movie->name_eng}}" data-h1="{{$movie->title}} -tap {{$sotap->episode}}">{{$sotap->episode}}</span></li>
                               </a>
                               @endforeach

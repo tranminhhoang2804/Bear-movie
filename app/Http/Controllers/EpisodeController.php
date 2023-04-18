@@ -15,7 +15,7 @@ class EpisodeController extends Controller
      */
     public function index()
     {
-        $list_episode = Episode::with('movie')->orderBy('movie_id','DESC')->get();
+        $list_episode = Episode::with('movie')->orderBy('episode','DESC')->get();
 
         return view('admincp.episode.index',compact('list_episode')); 
     }
@@ -40,6 +40,11 @@ class EpisodeController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
+        $episode_check = Episode::where('episode',$data['episode'])->where('movie_id',$data['movie_id'])->count();
+        if($episode_check>0){
+            toastr()->error('Thất bại!','Thêm tập phim thất bại!');
+            return redirect()->back();
+        }else {
         $ep = new Episode();
         $ep->movie_id=$data['movie_id'];
         $ep->linkphim=$data['link'];
@@ -47,9 +52,16 @@ class EpisodeController extends Controller
         $ep->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $ep->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $ep->save();
+        }
+        toastr()->success('Thành công!','Thêm tập phim thành công!');
         return redirect()->back();
     }
 
+    public function add_episode($id){
+        $movie = Movie::find($id);
+        $list_episode = Episode::with('movie')->where('movie_id',$id)->orderBy('episode','DESC')->get();
+        return view('admincp.episode.add_episode',compact('list_episode','movie'));
+    }
     /**
      * Display the specified resource.
      *
@@ -91,6 +103,7 @@ class EpisodeController extends Controller
         $ep->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $ep->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $ep->save();
+        toastr()->success('Thành công!','Cập nhật tập phim thành công!');
         return redirect()->to('episode');
     }
 
@@ -103,6 +116,7 @@ class EpisodeController extends Controller
     public function destroy($id)
     {
         $episode = Episode::find($id)->delete();
+        toastr()->success('Thành công!','Xóa tập phim thành công!');
         return redirect()->to('episode');
     }
     public function select_movie(){

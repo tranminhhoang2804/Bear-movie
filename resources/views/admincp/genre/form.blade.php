@@ -36,7 +36,7 @@
                         {!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], isset($genre) ? $genre->status : '' , ['class'=>'form-control']) !!}
                     </div>
                     @if(!isset($genre))
-                        {!! Form::submit('Thêm thể loại', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Tạo thể loại', ['class'=>'btn btn-success']) !!}
                     @else
                         {!! Form::submit('Cập nhật thể loại', ['class'=>'btn btn-success']) !!}
                     @endif

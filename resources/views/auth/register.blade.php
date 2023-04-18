@@ -15,8 +15,8 @@
                           <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                             <div class="text-center">
                                 <a href="{{route('welcome')}}">
-                                    <img src="{{asset('img/bear_logo.jpg')}}"
-                                      style="width: 100px; border-radius:20px ;" alt="logo">
+                                    <img src="{{asset('img/logo.png')}}"
+                                      style="width: 120px; border-radius:20px ;" alt="logo">
                                 </a>
                             </div>
 

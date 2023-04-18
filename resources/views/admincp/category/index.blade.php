@@ -30,7 +30,7 @@
                           {!! Form::open([
                             'method'=>'DELETE',
                             'route'=>['category.destroy',$cate->id],
-                            'onsubmit'=>'return confirm("Delete?")'
+                            'onsubmit'=>'return confirm("Bạn có chắc chắn muốn xóa?")'
                           ]) !!}
                           {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
 

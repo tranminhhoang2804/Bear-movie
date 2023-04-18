@@ -21,7 +21,7 @@
             <div class="section">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container">
-                        <a class="navbar-brand col-3" href="home.html"><img class="bear-logo img-thumbnail" src="{{asset('img/bear_logo.jpg')}}" title="Bear movie"><img class="bear-footer" src="{{asset('img/bear-footer.png')}}" title="Bear movie"></a>
+                        <a class="navbar-brand col-3" href="home.html"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie"><img class="bear-footer" src="{{asset('img/bear-footer.png')}}" title="Bear movie"></a>
                         <ul class="navbar-nav d-flex justify-content-end col-2">
                             <li class="nav-item">
                                 <a class="nav-link bg-warning rounded fw-bold text-dark ps-4 pe-4" href="{{route('login')}}">Đăng nhập</a>

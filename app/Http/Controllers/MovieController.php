@@ -20,7 +20,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $list = Movie::with('category','movie_genre','country')->orderBy('id','DESC')->get();
+        $list = Movie::with('category','movie_genre','country')->withCount('episode')->orderBy('id','DESC')->get();
 
         $path=public_path()."/json/";
         if(!is_dir($path)){
@@ -94,6 +94,7 @@ class MovieController extends Controller
         }
         $movie->save();
         $movie->movie_genre()->attach($data['genre']);
+        toastr()->success('Thành công!','Thêm phim thành công!');
         return redirect()->route('movie.index');
     }
 
@@ -176,6 +177,7 @@ class MovieController extends Controller
         $movie->save();
         //them nhieu the loai cho phim
         $movie->movie_genre()->sync($data['genre']);
+        toastr()->success('Thành công!','Cập nhật phim thành công!');
         return redirect()->route('movie.index');
     }
 
@@ -198,7 +200,7 @@ class MovieController extends Controller
         //xoatapphim
         Episode::whereIn('movie_id',[$movie->id])->delete();
         $movie->delete();
-
+        toastr()->success('Thành công!','Xóa phim thành công!');
         return redirect()->back();
     }
 }

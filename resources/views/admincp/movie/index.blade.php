@@ -5,11 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <!-- <a href="{{route('movie.create')}}" class="btn btn-primary mb-2">Thêm phim mới</a> -->
-            <table class="table" id="tablephim">
+            <table class="table table-responsive" id="tablephim">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Tên phim</th>
+                       <th scope="col">Số tập phim</th>
+                      <th scope="col">Tập phim</th>
                       <th scope="col">Thời lượng phim</th>
                       <th scope="col">Hình ảnh</th>
                       <th scope="col">Phim nổi bật</th>
@@ -20,7 +22,6 @@
                       <th scope="col">Thuoc loai phim</th>
                       <th scope="col">Thể loại</th>
                       <th scope="col">Quốc gia</th>
-                      <th scope="col">Số tập phim</th>
                       <th scope="col">Đạo diễn</th>
                       <th scope="col">Diễn viên</th>
                       <th scope="col">Ngày tạo</th>
@@ -34,6 +35,8 @@
                     <tr>
                       <th scope="row">{{$key}}</th>
                       <td>{{$cate->title}}</td>
+                      <td>{{$cate->episode_count}}/{{$cate->sotap}} tập</td>
+                      <td><a href="{{route('add-episode',[$cate->id])}}" class="btn btn-warning btn-sm">Thêm tập phim</a></td>
                       <td>{{$cate->thoiluong}}</td>
                        <td><img width="200px" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
                        <td>
@@ -89,7 +92,6 @@
                       </td>
                       
                       <td>{{$cate->country->title}}</td>
-                      <td>{{$cate->sotap}}</td>
                       <td>{{$cate->daodien}}</td>
                       <td>{{$cate->dienvien}}</td>
                       <td>{{$cate->ngaytao}}</td>
@@ -101,7 +103,7 @@
                           {!! Form::open([
                             'method'=>'DELETE',
                             'route'=>['movie.destroy',$cate->id],
-                            'onsubmit'=>'return confirm("Delete?")'
+                            'onsubmit'=>'return confirm("Bạn có chắc chắn muốn xóa??")'
                           ]) !!}
                           {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
 

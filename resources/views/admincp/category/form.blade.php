@@ -6,7 +6,15 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Quản lý danh mục phim</div>
-
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul style="list-style-type: none;">
+                            @foreach ($errors->all() as $error)
+                            <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -36,7 +44,7 @@
                         {!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], isset($category) ? $category->status : '' , ['class'=>'form-control']) !!}
                     </div>
                     @if(!isset($category))
-                        {!! Form::submit('Thêm danh mục', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Tạo danh mục', ['class'=>'btn btn-success']) !!}
                     @else
                         {!! Form::submit('Cập nhật danh mục', ['class'=>'btn btn-success']) !!}
                     @endif

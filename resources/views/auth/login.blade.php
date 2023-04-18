@@ -11,10 +11,10 @@
                   <div class="col-lg-6">
                     <div class="card-body p-md-5 mx-md-4">
                       <div class="text-center">
-                        <a href="{{route('welcome')}}">
-                        <img src="{{asset('img/bear_logo.jpg')}}"
+                        <a style="text-decoration: none;" href="{{route('welcome')}}">
+                        <img src="{{asset('img/logo.png')}}"
                           style="width: 185px; border-radius:30px ;" alt="logo">
-                        <h4 class="mt-1 mb-5 pb-1">BEAR MOVIE.NET</h4>
+                        <h4 class="text-dark fw-bold mt-1 mb-5 pb-1">BEAR MOVIE</h4>
                         </a>
                       </div>
 

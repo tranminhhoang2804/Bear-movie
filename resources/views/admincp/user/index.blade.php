@@ -7,7 +7,7 @@
                       <th scope="col">#</th>
                       <th scope="col">Tên người dùng</th>
                       <th scope="col">Email</th>
-                      <th scope="col">Mật khẩu</th>
+                      <th scope="col">Điện thoại</th>
                       <th scope="col">Quyền</th>
                       <th scope="col">Quản lý</th>
                     </tr>
@@ -19,7 +19,7 @@
                       <th scope="row">{{$key}}</th>
                       <td>{{$users->name}}</td>
                       <td>{{$users->email}}</td>
-                      <td>{{$users->password}}</td>
+                      <td>{{$users->phone}}</td>
                       <td>
                         @if($users->role)
                         Khách Hàng
@@ -29,7 +29,7 @@
                           {!! Form::open([
                             'method'=>'DELETE',
                             'route'=>['user.destroy',$users->id],
-                            'onsubmit'=>'return confirm("Delete?")'
+                            'onsubmit'=>'return confirm("Bạn có chắc chắn muốn xóa?")'
                           ]) !!}
                           {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
 

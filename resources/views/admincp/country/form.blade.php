@@ -36,7 +36,7 @@
                         {!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], isset($country) ? $country->status : '' , ['class'=>'form-control']) !!}
                     </div>
                     @if(!isset($country))
-                        {!! Form::submit('Thêm quốc gia', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Tạo quốc gia', ['class'=>'btn btn-success']) !!}
                     @else
                         {!! Form::submit('Cập nhật quốc gia', ['class'=>'btn btn-success']) !!}
                     @endif

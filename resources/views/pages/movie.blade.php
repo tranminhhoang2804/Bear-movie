@@ -58,41 +58,42 @@
                           </span>
                           @endif
                     </li>
-                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Danh mục</span> : <a href="{{route('category',[$movie->category->slug])}}" rel="category tag">{{$movie->category->title}}</a></li>
-                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Thời lượng</span> : {{$movie->thoiluong}}</li>
-                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">So tap</span> : 
+                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Danh mục</span> : <a class="fw-bold" href="{{route('category',[$movie->category->slug])}}" rel="category tag">{{$movie->category->title}}</a></li>
+                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Thời lượng</span> : <a class="fw-bold">{{$movie->thoiluong}}</a></li>
+                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Số tập</span> : <a class="fw-bold">
                         @if($movie->thuocphim=='phimbo')
                            {{$episode_current_list_count}}/{{$movie->sotap}} -
                               @if($episode_current_list_count==$movie->sotap)
-                                 Completed
+                                 Hoàn thành
                               @else
-                                 Updating
+                                 Đang cạp nhật
                               @endif
                         @else
-                           Phim le
+                           Phim lẻ
                         @endif
+                     </a>
                        </li>
                        <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Thể loại</span> :                        
                         @foreach($movie->movie_genre as $gen)
-                         <a href="{{route('genre',$gen->slug)}}" rel="category tag">{{$gen->title}},</a>
+                         <a class="fw-bold" href="{{route('genre',$gen->slug)}}" rel="category tag">{{$gen->title}},</a>
                         @endforeach                       
                        </li>
-                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Quốc gia</span> : <a href="{{route('country',[$movie->country->slug])}}" rel="tag">{{$movie->country->title}}</a></li>
+                       <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Quốc gia</span> : <a class="fw-bold" href="{{route('country',[$movie->country->slug])}}" rel="tag">{{$movie->country->title}}</a></li>
                        <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Tập phim mới nhất</span> : 
                           @if($episode_current_list_count>0) 
                               @if($movie->thuocphim=='phimbo')
                                  @foreach($episode as $key =>$ep)
-                                 <a href="{{url('xem-phim/'.$ep->movie->slug.'/tap-'.$ep->episode)}}" rel="tag">Tập {{$ep->episode}} ,</a>
+                                 <a class="fw-bold" href="{{url('xem-phim/'.$ep->movie->slug.'/tap-'.$ep->episode)}}" rel="tag">Tập {{$ep->episode}} ,</a>
                                  @endforeach
                              
                               @elseif($movie->thuocphim=='phimle')
                                  @foreach($episode as $key =>$ep_le)
-                                 <a href="{{url('xem-phim/'.$ep_le->movie->slug.'/tap-'.$ep_le->episode)}}" rel="tag">{{$ep_le->episode}}</a>
+                                 <a class="fw-bold" href="{{url('xem-phim/'.$ep_le->movie->slug.'/tap-'.$ep_le->episode)}}" rel="tag">{{$ep_le->episode}}</a>
                                  @endforeach
                               @endif 
 
                            @else
-                              Updating
+                              <a class="fw-bold text-danger">Đang cập nhật</a>
                            @endif
                      </li>
                        <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Đạo diễn</span> : {{$movie->daodien}}</li>
@@ -102,6 +103,7 @@
                         @if($movie->resolution!=5)
                            @if($episode_current_list_count>0)
                            <a class="bg-warning text-dark movie-button fw-bold p-2 m-2" href="{{url('xem-phim/'.$movie->slug.'/tap-'.$episode_tapdau->episode)}}">Xem phim</a>
+                           <a class="bg-warning text-dark movie-button fw-bold p-2 m-2" href="#trailer">Xem trailer</a>
                            @endif
                         @else
                            <a class="bg-warning text-dark movie-button fw-bold p-2 m-2" href="#trailer">Xem trailer</a>   
@@ -114,7 +116,7 @@
         <div class="clearfix"></div>
                      <div class="section-container container">
                         <div class="section-bar border-bottom">
-                           <p class="section-title h5"><span class="text-warning">Nội dung phim</span></p>
+                           <p class="section-title h5"><span class="text-light fw-bold">NỘI DUNG</span></p>
                         </div>
                         <div class="entry-content htmlwrap">
                            <div class="video-item halim-entry-box p-3">
@@ -126,7 +128,7 @@
                      </div>
                      <div class="section-container container">
                         <div class="section-bar border-bottom">
-                           <p class="section-title h5"><span class="text-warning">Tags</span></p>
+                           <p class="section-title h5"><span class="text-light fw-bold">TAGS</span></p>
                         </div>
                         <div class="entry-content htmlwrap">
                            <div class="video-item halim-entry-box p-3">
@@ -137,7 +139,7 @@
                                        $tags = explode(',',$movie->tags);
                                     @endphp
                                     @foreach($tags as $key => $tag)
-                                       <a href="{{url('tag/'.$tag)}}">{{$tag}},</a>
+                                       <a class="text-warning" style="text-decoration: none;" href="{{url('tag/'.$tag)}}">{{$tag}},</a>
                                     @endforeach
                                  @else
                                     {{$movie->title}},
@@ -148,12 +150,12 @@
                      </div>
                      <div class="section-container container">
                      <div class="section-bar border-bottom">
-                        <p class="section-title h5"><span class="text-warning">TRAILER</span></p>
+                        <p class="section-title h5"><span class="text-light fw-bold">TRAILER</span></p>
                      </div>
                      <div class="entry-content htmlwrap container col-7">
                         <div class="video-item halim-entry-box d-flex justify-content-center p-5">
                            <article id="trailer" class="item-content text-light">
-                              <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$movie->trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                              <iframe width="800" height="500" src="https://www.youtube.com/embed/{{$movie->trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                            </article>
                         </div>
                      </div>
