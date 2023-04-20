@@ -1,14 +1,12 @@
 .body_main {
-    background-color: #B9D7EA;
+    background-color: #212529;
 }
 .bear-logo {
     width: 30%;
 }
 
 .movie-header {
-    background-color: #F7FBFC;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: #ffc107;
 }
 .seacrh-button {
     box-shadow: 2px 2px 4px #769FCD;
@@ -20,6 +18,10 @@
     transition: all 0.5s;
     background-color: #D6E6F2;
 }
+.menu-item {
+    background-color: #ffd65c ;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -324,6 +326,7 @@ ul.dropdown-menu.drp-mnu li {
 .footer {
     border-top: 1px solid rgba(255, 255, 255, 0.200);
     padding-top: 10px;
+    background-color: #ffc107;
 }
 .contact {
     font-size: small;

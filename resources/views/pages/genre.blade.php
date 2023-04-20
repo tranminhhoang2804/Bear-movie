@@ -35,6 +35,7 @@
                                                 Trailer
                                             @endif
                             </span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
+                                {{$mov->episode_count}}/{{$mov->sotap}} 
 											@if($mov->phude==0)
 					                            Vietsub
 					                        @else

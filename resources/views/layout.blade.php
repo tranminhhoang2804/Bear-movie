@@ -14,13 +14,13 @@
 		<script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
 	</head>
 
-	<body class="body_main">
+	<body>
         @if(Auth::check())
-			<div class="container-fluid">
+			<div class="body_main container-fluid">
             <!-- header -->
-            <nav class="navbar navbar-expand-lg movie-header sticky-top">
+            <nav class="navbar navbar-expand-lg movie-header">
                 <div class="container">
-                    <a class="navbar-brand col-3 fw-bold text-secondary" href="{{route('homepage')}}"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie">BEAR MOVIE</a>
+                    <a class="navbar-brand col-3 fw-bold text-dark" href="{{route('homepage')}}"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie">BEAR MOVIE</a>
                     <form class="d-flex col-5 gap-2" action="{{route('tim-kiem')}}" method="GET">
                         <input class="form-control" type="text" name="search" id="timkiem" placeholder="Tìm kiếm" autocomplete="off">
                         <button class="btn seacrh-button btn-outline-secondary text-dark fw-bold">Search</button>
@@ -28,9 +28,9 @@
                     <ul class="navbar-nav d-flex justify-content-end col-2 gap-2">
                         <li class="nav-item">
                             @if (Auth::user()->role==1)
-                             <p class="text-secondary"><a style="text-decoration: none;" class="auth_btn text-warning fw-bold p-2 h5" href="{{route('home')}}">{{Auth::user()->name}}</a></p>
+                             <p class="text-secondary"><a style="text-decoration: none;" class="auth_btn text-danger fw-bold p-2 h5" href="{{route('home')}}">{{Auth::user()->name}}</a></p>
                              @else
-                             <p class="text-secondary fw-bold h5">| {{Auth::user()->name}} |</p>
+                             <p class="text-dark fw-bold h5">| {{Auth::user()->name}} |</p>
                              @endif
                              <form action="{{route('logout')}}" method="POST">
                                 @csrf
@@ -81,41 +81,42 @@
                 </ul>
             </div>
             <!-- end-menu -->
-
-            <div class="clearfix"></div>
 {{-- ---------------------------------------------------------------------------------- --}}
+            <div class="p-5">
 				@yield('content')
+                @include('pages.include.banner')
+            </div>
 {{-- ---------------------------------------------------------------------------------- --}}
-			<div class="footer mt-5">
+			<div class="footer mt-1 p-2">
                 <div class="dowload-mobile d-flex justify-content-start container">
                     <div class="row col-8 text-center">
                         <div class="col-2">
-                            <a class="contact text-secondary fw-bold" href="#">Giới thiệu</a>
+                            <a class="contact text-dark fw-bold" href="#">Giới thiệu</a>
                         </div>
                         <div class="col-1">
                             <div class="vr text-dark"></div>
                         </div>
                         <div class="col-2">
-                            <a class="contact text-secondary fw-bold" href="#">Quảng cáo</a>
+                            <a class="contact text-dark fw-bold" href="#">Quảng cáo</a>
                         </div>
                         <div class="col-1">
                             <div class="vr text-dark"></div>
                         </div>
                         <div class="col-2">
-                            <a class="contact text-secondary fw-bold" href="#">Quyền riêng tư</a>
+                            <a class="contact text-dark fw-bold" href="#">Quyền riêng tư</a>
                         </div>
                         <div class="col-1">
                             <div class="vr text-dark"></div>
                         </div>
                         <div class="col-2">
-                            <a class="contact text-secondary fw-bold" href="#">Điều khoản</a>
+                            <a class="contact text-dark fw-bold" href="#">Điều khoản</a>
                         </div>
                         <div class="col-1">
                             <div class="vr text-dark"></div>
                         </div>
                     </div>
                     <div class="app col-4">
-                        <span class="text-secondary fw-bold">Tải ứng dụng tại: </span><span><a href="#"><img width="100rem" src="{{asset('img/google-play.png')}}"></a></span> <span><a href="#"><img width="88rem" src="{{asset('img/app-store.png')}}"></a></span>
+                        <span class="text-dark fw-bold">Tải ứng dụng tại: </span><span><a href="#"><img width="100rem" src="{{asset('img/google-play.png')}}"></a></span> <span><a href="#"><img width="88rem" src="{{asset('img/app-store.png')}}"></a></span>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
@@ -139,6 +140,11 @@
 		<script type="text/javascript" src="{{asset("js/bootstrap.min.js")}}"></script>		
 		<script type="text/javascript" src="{{asset("js/owl.carousel.min.js")}}"></script>
 		<script type="text/javascript" src="{{asset("js/halimtheme-core.min.js")}}"></script>
+        <script type="text/javascript">
+            $(window).on('load',function(){
+                $('#banner_popup').modal('show');
+            });
+        </script>
 		<script type="text/javascript">
             $(document).ready(function(){
                 $('#timkiem').keyup(function(){
