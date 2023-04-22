@@ -29,19 +29,19 @@
                     @endif
                     <div class="form-group">
                         {!! Form::label('title','Tên danh mục',[]) !!}
-                        {!! Form::text('title', isset($category) ? $category->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
+                        {!! Form::text('title', isset($category) ? $category->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('slug','Slug',[]) !!}
-                        {!! Form::text('slug', isset($category) ? $category->slug : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'convert_slug']) !!}
+                        {!! Form::text('slug', isset($category) ? $category->slug : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'convert_slug','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('description','Mô tả',[]) !!}
-                        {!! Form::textarea('description', isset($category) ? $category->description : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'description']) !!}
+                        {!! Form::textarea('description', isset($category) ? $category->description : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'description','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('Active','Active',[]) !!}
-                        {!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], isset($category) ? $category->status : '' , ['class'=>'form-control']) !!}
+                        {!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], isset($category) ? $category->status : '' , ['class'=>'form-control','required'=>'required']) !!}
                     </div>
                     @if(!isset($category))
                         {!! Form::submit('Tạo danh mục', ['class'=>'btn btn-success']) !!}

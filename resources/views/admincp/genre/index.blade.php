@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-	<table class="table">
+	<table class="table table-responsive" id="tablephim">
         <thead>
-            <tr>
-                <th  class="bg-primary" scope="col">STT</th>
-                <th  class="bg-info" scope="col">Tên thể loại</th>
-                <th  class="bg-primary" scope="col">Mô tả</th>
-                <th  class="bg-info" scope="col">Slug</th>
-                <th  class="bg-primary" scope="col">Active</th>
-                <th  class="bg-info" colspan="2" style="text-align: center;" scope="col">Manage</th>
+            <tr class="bg-info">
+                <th scope="col">STT</th>
+                <th scope="col">Tên thể loại</th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Active</th>
+                <th scope="col">Manage</th>
             </tr>
         </thead>
         <tbody>
@@ -35,8 +35,6 @@
                         {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
 
                         {!! Form::close() !!}
-                    </td>
-                    <td  class="text-center">
                         <a href="{{route('genre.edit',$cate->id)}}" class="btn btn-warning">Sửa</a>
                     </td>
                 </tr>

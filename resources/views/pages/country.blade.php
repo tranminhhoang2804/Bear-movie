@@ -10,9 +10,6 @@
         <div class="col-xs-12 movie-by-cate container">
             <section id="halim-advanced-widget-4">
                <div class="section-heading mt-2 mb-2 p-2">
-                  <a href="#" title="Phim Chiếu Rạp">
-                  <span class="fw-bolder text-warning">{{$count_slug->title}}</span>
-                  </a>
                </div>
                 <div class="halim-box row">
                 	 @foreach($movie as $key => $mov)
@@ -54,10 +51,10 @@
                     </article>
                     @endforeach
                 </div>
-                <div class="text-center d-flex justify-content-center">
+            </section>
+            <div class="text-center d-flex justify-content-center">
                 {!!$movie -> links("pagination::bootstrap-4") !!}
             </div>
-            </section>
         </div>
         <div class="clearfix"></div>
 

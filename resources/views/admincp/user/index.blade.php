@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-	<table class="table container">
+	<table class="table table-responsive" id="tablephim">
                   <thead>
-                    <tr>
+                    <tr class="bg-info">
                       <th scope="col">#</th>
                       <th scope="col">Tên người dùng</th>
                       <th scope="col">Email</th>

@@ -10,6 +10,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\EpisodeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('episode', EpisodeController::class);
     Route::get('select-movie', [EpisodeController::class,'select_movie'])->name('select-movie');
     Route::resource('movie', MovieController::class);
+    Route::resource('banner', BannerController::class);
     Route::get('/update-year-phim',[MovieController::class, 'update_year']);
     Route::resource('user', UserController::class);

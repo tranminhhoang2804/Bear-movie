@@ -21,23 +21,23 @@
                     @endif
                     <div class="form-group">
                         {!! Form::label('name','Tên người dùng',[]) !!}
-                        {!! Form::text('name', isset($user) ? $user->name : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('name', isset($user) ? $user->name : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('email','Email',[]) !!}
-                        {!! Form::text('email', isset($user) ? $user->email : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('email', isset($user) ? $user->email : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('password','Mật khẩu',[]) !!}
-                        {!! Form::text('password', isset($user) ? $user->password : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('password', isset($user) ? $user->password : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('phone','Số điện thoại',[]) !!}
-                        {!! Form::text('phone', isset($user) ? $user->phone : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('phone', isset($user) ? $user->phone : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('role','Quyền',[]) !!}
-                        {!! Form::select('role', ['1'=>'admin','2'=>'users'], isset($user) ? $user->role : '' , ['class'=>'form-control']) !!}
+                        {!! Form::select('role', ['1'=>'admin','2'=>'users'], isset($user) ? $user->role : '' , ['class'=>'form-control','required'=>'required']) !!}
                     </div>
                     @if(!isset($user))
                         {!! Form::submit('Tạo người dùng', ['class'=>'btn btn-success']) !!}

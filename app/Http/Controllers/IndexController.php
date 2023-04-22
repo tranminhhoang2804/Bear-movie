@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\Movie;
 use App\Models\Episode;
 use App\Models\Movie_Genre;
+use App\Models\Banner;
 class IndexController extends Controller
 {
     public function timkiem(){
@@ -29,11 +30,12 @@ class IndexController extends Controller
         $phimhot_trailer = Movie::where('resolution',5)->where('status',1)->orderBy('ngaycapnhat','DESC')->get();
         $category = Category::orderBy('id','DESC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
+        $banner = Banner::where('status',2)->orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
         $category_home = Category::with(['movie'=> function($q){
             $q -> withCount('episode');
         }])->orderBy('id','DESC')->where('status',1)->get(); //nested
-        return view('pages.home',compact('category','genre','country','category_home','phimhot','phimhot_trailer'));
+        return view('pages.home',compact('category','genre','country','category_home','phimhot','phimhot_trailer','banner'));
     }
     public function category($slug){
         $category = Category::orderBy('id','DESC')->where('status',1)->get();

@@ -22,39 +22,39 @@
                     @endif
                     <div class="form-group">
                         {!! Form::label('title','Tên phim',[]) !!}
-                        {!! Form::text('title', isset($movie) ? $movie->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
+                        {!! Form::text('title', isset($movie) ? $movie->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('thoiluong','Thời lượng phim',[]) !!}
-                        {!! Form::text('thoiluong', isset($movie) ? $movie->thoiluong : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('thoiluong', isset($movie) ? $movie->thoiluong : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('sotap','Số tập phim',[]) !!}
-                        {!! Form::text('sotap', isset($movie) ? $movie->sotap : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('sotap', isset($movie) ? $movie->sotap : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                      <div class="form-group">
                         {!! Form::label('Tên Tieng Anh','Tên tiếng Anh',[]) !!}
-                        {!! Form::text('name_eng', isset($movie) ? $movie->name_eng : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('name_eng', isset($movie) ? $movie->name_eng : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('slug','Slug',[]) !!}
-                        {!! Form::text('slug', isset($movie) ? $movie->slug : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'convert_slug']) !!}
+                        {!! Form::text('slug', isset($movie) ? $movie->slug : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'convert_slug','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('daodien','Đạo diễn',[]) !!}
-                        {!! Form::text('daodien', isset($movie) ? $movie->daodien : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('daodien', isset($movie) ? $movie->daodien : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('dienvien','Diễn viên',[]) !!}
-                        {!! Form::text('dienvien', isset($movie) ? $movie->dienvien : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('dienvien', isset($movie) ? $movie->dienvien : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('description','Mô tả',[]) !!}
-                        {!! Form::textarea('description', isset($movie) ? $movie->description : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'description']) !!}
+                        {!! Form::textarea('description', isset($movie) ? $movie->description : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'description','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('tags','Tag phim',[]) !!}
-                        {!! Form::textarea('tags', isset($movie) ? $movie->tags : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::textarea('tags', isset($movie) ? $movie->tags : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('trailer','Trailer',[]) !!}
@@ -101,7 +101,7 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('Image','Image',[]) !!}
-                        {!! Form::file('image', ['class'=>'form-control-file']) !!}
+                        {!! Form::file('image', ['class'=>'form-control-file','required'=>'required']) !!}
                         @if(isset($movie))
                             <img width="200px" src="{{asset('uploads/movie/'.$movie->image)}}">
                         @endif

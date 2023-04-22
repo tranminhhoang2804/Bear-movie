@@ -21,15 +21,15 @@
                     @endif
                     <div class="form-group">
                         {!! Form::label('title','Tên thể loại',[]) !!}
-                        {!! Form::text('title', isset($genre) ? $genre->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
+                        {!! Form::text('title', isset($genre) ? $genre->title : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'slug','onkeyup'=>'ChangeToSlug()','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('slug','Slug',[]) !!}
-                        {!! Form::text('slug', isset($genre) ? $genre->slug : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'convert_slug']) !!}
+                        {!! Form::text('slug', isset($genre) ? $genre->slug : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'convert_slug','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('description','Mô tả',[]) !!}
-                        {!! Form::textarea('description', isset($genre) ? $genre->description : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'description']) !!}
+                        {!! Form::textarea('description', isset($genre) ? $genre->description : '', ['style'=>'resize:none','class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','id'=>'description','required'=>'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('Active','Active',[]) !!}

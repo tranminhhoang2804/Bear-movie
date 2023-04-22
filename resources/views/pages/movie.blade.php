@@ -66,10 +66,15 @@
                               @if($episode_current_list_count==$movie->sotap)
                                  Hoàn thành
                               @else
-                                 Đang cạp nhật
+                                 Đang cập nhật
                               @endif
                         @else
                            Phim lẻ
+                           @if($episode_current_list_count==$movie->sotap)
+                                 Hoàn thành
+                              @else
+                                 Đang cập nhật
+                              @endif
                         @endif
                      </a>
                        </li>
@@ -98,15 +103,15 @@
                      </li>
                        <li class="list-info-group-item text-warning"><span class="fw-bold text-light">Đạo diễn</span> : {{$movie->daodien}}</li>
                        <li class="list-info-group-item last-item text-warning" style="-overflow: hidden;-display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-flex: 1;-webkit-box-orient: vertical;"><span class="fw-bold text-light">Diễn viên</span> : {{$movie->dienvien}} </li>
-                       <li></li>
+                       <br>
                        <li class="list-info-group-item text-warning">  
                         @if($movie->resolution!=5)
                            @if($episode_current_list_count>0)
                            <a class="bg-warning text-dark movie-button fw-bold p-2 m-2" href="{{url('xem-phim/'.$movie->slug.'/tap-'.$episode_tapdau->episode)}}">Xem phim</a>
-                           <a class="bg-warning text-dark movie-button fw-bold p-2 m-2" href="#trailer">Xem trailer</a>
+                           <a class="bg-danger text-light movie-button fw-bold p-2 m-2" href="#trailer">Xem trailer</a>
                            @endif
                         @else
-                           <a class="bg-warning text-dark movie-button fw-bold p-2 m-2" href="#trailer">Xem trailer</a>   
+                           <a class="bg-danger text-dark movie-button fw-bold p-2 m-2" href="#trailer">Xem trailer</a>   
                         @endif
                      </li>
                     </ul>
@@ -120,7 +125,7 @@
                         </div>
                         <div class="entry-content htmlwrap">
                            <div class="video-item halim-entry-box p-3">
-                              <article id="post-38424" class="item-content text-light">
+                              <article id="post-38424" class="item-content text-light" style="text-align: justify;">
    						            {{$movie->description}}
    						         </article>
                            </div>
@@ -139,7 +144,7 @@
                                        $tags = explode(',',$movie->tags);
                                     @endphp
                                     @foreach($tags as $key => $tag)
-                                       <a class="text-warning" style="text-decoration: none;" href="{{url('tag/'.$tag)}}">{{$tag}},</a>
+                                       <a class="text-dark" style="text-decoration: none;" href="{{url('tag/'.$tag)}}">{{$tag}},</a>
                                     @endforeach
                                  @else
                                     {{$movie->title}},

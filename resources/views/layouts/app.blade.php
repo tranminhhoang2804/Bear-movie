@@ -228,6 +228,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li class="treeview">
                           <a href="#">
                             <i class="fa fa-laptop"></i>
+                            <span>QUẢN LÝ BẢN TIN</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li>
+                              <a href="{{route('banner.create')}}"><i class="fa fa-angle-right"></i>Thêm bản tin mới</a>
+                            </li>
+                            <li>
+                              <a href="{{route('banner.index')}}"><i class="fa fa-angle-right"></i>Danh sách bản tin</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="treeview">
+                          <a href="#">
+                            <i class="fa fa-laptop"></i>
                             <span>QUẢN LÝ NGƯỜI DÙNG</span>
                             <i class="fa fa-angle-left pull-right"></i>
                           </a>

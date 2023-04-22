@@ -4,16 +4,13 @@
 <div class="panel-heading container p-2">
             <div class="row">
             <div class="col-xs-6">
-                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light">Danh mục » <a class="panel-heading-title text-light fw-bold" href="">{{$cate_slug->title}}</a></span></span></div>
+                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light fw-bolder">DANH MỤC » <a class="panel-heading-title text-light fw-bold" href="">{{$cate_slug->title}}</a></span></span></div>
             </div>
             </div>
         </div>
         <div class="col-xs-12 movie-by-cate container">
             <section id="halim-advanced-widget-4">
                <div class="section-heading mt-2 mb-2 p-2">
-                  <a href="#" title="Phim Chiếu Rạp">
-                  <span class="fw-bolder text-warning">{{$cate_slug->title}}</span>
-                  </a>
                </div>
                 <div class="halim-box row">
                 	@foreach($movie as $key => $mov)

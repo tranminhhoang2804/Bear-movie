@@ -20,22 +20,41 @@
             <!-- header -->
             <nav class="navbar navbar-expand-lg movie-header">
                 <div class="container">
-                    <a class="navbar-brand col-3 fw-bold text-dark" href="{{route('homepage')}}"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie">BEAR MOVIE</a>
+                    <a class="navbar-brand col-3 fw-bold text-light" href="{{route('homepage')}}"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie">BEAR MOVIE</a>
                     <form class="d-flex col-5 gap-2" action="{{route('tim-kiem')}}" method="GET">
                         <input class="form-control" type="text" name="search" id="timkiem" placeholder="Tìm kiếm" autocomplete="off">
-                        <button class="btn seacrh-button btn-outline-secondary text-dark fw-bold">Search</button>
+                        <button class="seacrh-button text-dark fw-bold">Search</button>
                     </form>
                     <ul class="navbar-nav d-flex justify-content-end col-2 gap-2">
-                        <li class="nav-item">
+                        <li class="nav-item dropdown">
                             @if (Auth::user()->role==1)
-                             <p class="text-secondary"><a style="text-decoration: none;" class="auth_btn text-danger fw-bold p-2 h5" href="{{route('home')}}">{{Auth::user()->name}}</a></p>
+                             <button class="btn btn-danger fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{Auth::user()->name}}
+                            </button>
+                            <ul class="dropdown-content text-center">
+                                <li>
+                                    <a class="fw-bold" href="{{route('home')}}">Dashboard</a>
+                                </li>
+                                <li>
+                                     <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
+                                    </form>
+                                </li>
+                            </ul>
                              @else
-                             <p class="text-dark fw-bold h5">| {{Auth::user()->name}} |</p>
-                             @endif
-                             <form action="{{route('logout')}}" method="POST">
-                                @csrf
-                                <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
-                            </form>
+                             <button class="btn btn-light fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{Auth::user()->name}}
+                            </button>
+                            <ul class="dropdown-content text-center">
+                                <li>
+                                     <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
+                                    </form>
+                                </li>
+                            </ul>
+                            @endif 
                         </li>
                     </ul>
                 </div>
@@ -56,7 +75,7 @@
                         <ul class="dropdown-content">
                         	@foreach($genre as $key => $gen)
                         		<li>
-                        			<a class="text-warning" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
+                        			<a class="dropdown-title" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
                         		</li>
                         	@endforeach
                         </ul>
@@ -65,7 +84,9 @@
                         <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quốc gia</a>
                         <ul class="dropdown-content">
                         	@foreach($country as $key => $count)
-                        <li><a class="text-warning" title="{{$count->title}}" href="{{route('country',$count->slug)}}">{{$count->title}}</a></li>
+                                <li>
+                                    <a class="dropdown-title" title="{{$count->title}}" href="{{route('country',$count->slug)}}">{{$count->title}}</a>
+                                </li>
                         	@endforeach
                      
                         </ul>
@@ -74,7 +95,9 @@
                         <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Năm</a>
                         <ul class="dropdown-content">
                         	@for($year=2000; $year<=2023;$year++)
-                        		<li><a class="text-warning" title="{{$year}}" href="{{url('nam/'.$year)}}">{{$year}}</a></li>
+                        		<li>
+                                    <a class="dropdown-title" title="{{$year}}" href="{{url('nam/'.$year)}}">{{$year}}</a>
+                                </li>
                    			@endfor
                         </ul>
                     </li>
@@ -82,47 +105,46 @@
             </div>
             <!-- end-menu -->
 {{-- ---------------------------------------------------------------------------------- --}}
-            <div class="p-5">
+            <div class="p-5 content-list">
 				@yield('content')
-                @include('pages.include.banner')
             </div>
 {{-- ---------------------------------------------------------------------------------- --}}
 			<div class="footer mt-1 p-2">
                 <div class="dowload-mobile d-flex justify-content-start container">
                     <div class="row col-8 text-center">
                         <div class="col-2">
-                            <a class="contact text-dark fw-bold" href="#">Giới thiệu</a>
+                            <a class="contact text-light fw-bold" href="#">Giới thiệu</a>
                         </div>
                         <div class="col-1">
-                            <div class="vr text-dark"></div>
+                            <div class="vr text-light"></div>
                         </div>
                         <div class="col-2">
-                            <a class="contact text-dark fw-bold" href="#">Quảng cáo</a>
+                            <a class="contact text-light fw-bold" href="#">Quảng cáo</a>
                         </div>
                         <div class="col-1">
-                            <div class="vr text-dark"></div>
+                            <div class="vr text-light"></div>
                         </div>
                         <div class="col-2">
-                            <a class="contact text-dark fw-bold" href="#">Quyền riêng tư</a>
+                            <a class="contact text-light fw-bold" href="#">Quyền riêng tư</a>
                         </div>
                         <div class="col-1">
-                            <div class="vr text-dark"></div>
+                            <div class="vr text-light"></div>
                         </div>
                         <div class="col-2">
-                            <a class="contact text-dark fw-bold" href="#">Điều khoản</a>
+                            <a class="contact text-light fw-bold" href="#">Điều khoản</a>
                         </div>
                         <div class="col-1">
-                            <div class="vr text-dark"></div>
+                            <div class="vr text-light"></div>
                         </div>
                     </div>
                     <div class="app col-4">
-                        <span class="text-dark fw-bold">Tải ứng dụng tại: </span><span><a href="#"><img width="100rem" src="{{asset('img/google-play.png')}}"></a></span> <span><a href="#"><img width="88rem" src="{{asset('img/app-store.png')}}"></a></span>
+                        <span class="text-light fw-bold">Tải ứng dụng tại: </span><span><a href="#"><img width="100rem" src="{{asset('img/google-play.png')}}"></a></span> <span><a href="#"><img width="88rem" src="{{asset('img/app-store.png')}}"></a></span>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
                   <div class="col-7">
                     <div class="row">
-                        <p class="title text-dark text-center">
+                        <p class="title text-light text-center">
                         Bear Movie là dịch vụ được cung cấp bởi Công ty Cổ Phần Bear Entertainment, thành viên của Công ty Cổ Phần Giải Trí và Giáo Dục Animals (GEE.,JSC)
                         </p>
                     </div>

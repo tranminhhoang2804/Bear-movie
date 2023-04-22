@@ -22,13 +22,13 @@
                     @endif
 
                     <div class="form-group">
-                        {!! Form::label('movie','Chon Phim',[]) !!}
+                        {!! Form::label('movie','Chọn Phim',[]) !!}
                         {!! Form::select('movie_id', ['0'=>'Chon phim', 'Phim'=>$list_movie], isset($episode) ? $episode->movie_id: '', ['class'=>'form-control select-movie']) !!}
                     </div>
 
                      <div class="form-group">
                         {!! Form::label('link','Link phim',[]) !!}
-                        {!! Form::text('link', isset($episode) ? $episode->linkphim : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu']) !!}
+                        {!! Form::text('link', isset($episode) ? $episode->linkphim : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu','required'=>'required']) !!}
                     </div>
 
                     @if(isset($episode))

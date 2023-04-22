@@ -1,23 +1,29 @@
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="banner_popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal modal-xl fade" id="banner_popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <a href="#" target="_blank">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Co the ban chua biet?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img style="width: 100%" src="{{asset('img/banner.jpg')}}">
+    
+    <div class="modal-content p-2">
+      @foreach($banner as $key => $ban)
+        @if ($ban->status==2)
+        <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title" id="exampleModalLongTitle">CÓ GÌ MỚI HÔM NAY?</h5>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6"><img style="width: 100%; height: 100%;" src="{{asset('uploads/banner/'.$ban->image)}}"></div>
+              <div class="col-md-6 ms-auto">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">{{$ban->title}}</h5>
+                </div>
+                <div class="modal-description"> 
+                  {{$ban->description}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endif
+        @endforeach
       </div>
     </div>
-  </a>
-  </div>
 </div>

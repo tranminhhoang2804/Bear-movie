@@ -4,11 +4,10 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <!-- <a href="{{route('movie.create')}}" class="btn btn-primary mb-2">Thêm phim mới</a> -->
             <table class="table table-responsive" id="tablephim">
                   <thead>
-                    <tr>
-                      <th scope="col">#</th>
+                    <tr class="bg-info">
+                      <th scope="col">ID</th>
                       <th scope="col">Tên phim</th>
                        <th scope="col">Số tập phim</th>
                       <th scope="col">Tập phim</th>

@@ -1,15 +1,20 @@
 .body_main {
-    background-color: #212529;
+    background-color: #8fd5d0;
 }
 .bear-logo {
     width: 30%;
 }
-
 .movie-header {
-    background-color: #ffc107;
+    background-color: #008569;
 }
 .seacrh-button {
-    box-shadow: 2px 2px 4px #769FCD;
+    border-radius: 5px;
+    border: none;
+    background-color: #93fde7;
+}
+.seacrh-button:hover {
+    transition: all 0.5s;
+    background-color: #00d1a5;
 }
 .card-image {
     width: 25%;
@@ -19,7 +24,7 @@
     background-color: #D6E6F2;
 }
 .menu-item {
-    background-color: #ffd65c ;
+    background-color: #ffffff ;
 }
 
 .dropdown {
@@ -31,40 +36,44 @@
     list-style: none;
     display: none;
     position: absolute;
-    background-color: black;
-    border-radius: 15px;
-    padding: 1px;
+    width: 150px;
+    height: 15rem;
+    background-color: #ffffff;
+    padding: 10px 0px;
     z-index: 1;
+    overflow: auto;
   }
 
   .dropdown-content a {
     padding: 5px 16px;
-    border-radius: 10px;
     text-decoration: none;
     display: block;
     font-size: 14px;
   }
-  .dropdown-content a:hover{
-    background-color: #333333;
-    color: #0000;
-  }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+.dropdown-title {
+    color: #000000;
+}
+.dropdown-title:hover {
+    transition: all 0.5s;
+    background-color: #93fde7;
+    color: black;
 }
 .visible-xs-inline {
     text-decoration: none;
 }
 .link-button:hover {
     transition: all 0.5s;
-    background-color: #F7FBFC;
+    background-color: #8fd5d0;
 }
 /*------------------------------------------*/
 
 /* ---------------------------------------- */
 .panel-heading {
-    border-radius: 10px;
-    background-color: #333333;
+    background-color: #37af9c;
 }
 .panel-heading-title, .movie-title {
     text-decoration: none;
@@ -72,6 +81,9 @@
 .section-heading {
     border-top: 2px solid #ffffff50;
     border-bottom: 2px solid #ffffff50;
+}
+.content-list {
+    min-height: 50rem;
 }
 /* ---------------------------------------- */
 .hot-movie {
@@ -183,12 +195,12 @@
     text-shadow:1px 1px 2px #000000;
 }
 .film-title {
-    background-color: #82A6CB;
+    background-color: #37af9c;
     border-radius: 10px;
     box-shadow: 2px 2px 25px #00FF99;
 }
 .section-container {
-    background-color: #82A6CB;
+    background-color: #37af9c;
     padding: 5px;
     margin-top: 25px;
     border-radius: 8px;
@@ -300,6 +312,11 @@ ul.dropdown-menu.drp-mnu li {
     animation-duration: 1.2s;
     animation-iteration-count: infinite;
 }
+.modal-description {
+    height: 75%;
+    overflow: auto;
+    text-align: justify;
+}
 @keyframes scaling {
     from {
         scale: 1;
@@ -326,7 +343,7 @@ ul.dropdown-menu.drp-mnu li {
 .footer {
     border-top: 1px solid rgba(255, 255, 255, 0.200);
     padding-top: 10px;
-    background-color: #ffc107;
+    background-color: #008569;
 }
 .contact {
     font-size: small;

@@ -4,24 +4,14 @@
 <div class="panel-heading container p-2">
             <div class="row">
             <div class="col-xs-6">
-                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light">Năm » 
-								@for($year_bread=2000;$year_bread<=2023;$year_bread++)
-								<span>
-									<a class="text-warning" title="{{$year_bread}}" href="{{url('nam/'.$year_bread)}}">
-									{{$year_bread}}
-									</a> >>
-								</span>
-								@endfor
-                </span></span></div>
+                <div class="yoast_breadcrumb hidden-xs"><span class="text-light fw-bold h5"><span class="text-light fw-bold">Năm »
+                </span>{{$year}}</span></div>
             </div>
             </div>
         </div>
         <div class="col-xs-12 movie-by-cate container">
             <section id="halim-advanced-widget-4">
                <div class="section-heading mt-2 mb-2 p-2">
-                  <a href="#" title="Phim Chiếu Rạp">
-                  <span class="fw-bolder text-warning">{{$year}}</span>
-                  </a>
                </div>
                 <div class="halim-box row">
                 	 @foreach($movie as $key => $mov)
@@ -62,24 +52,9 @@
                     @endforeach
                 </div>
             </section>
+            <div class="text-center d-flex justify-content-center">
+                {!!$movie -> links("pagination::bootstrap-4") !!}
+            </div>
         </div>
-        <div class="clearfix"></div>
-        <nav aria-label="..." class="container text-center d-flex justify-content-center mt-3">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link bg-warning text-dark fw-bold">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link bg-warning text-dark fw-bold" href="#">1</a></li>
-              <li class="page-item"><a class="page-link bg-warning text-dark fw-bold" href="#">2</a></li>
-              <li class="page-item"><a class="page-link bg-warning text-dark fw-bold" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link bg-warning text-dark fw-bold" href="#">Next</a>
-              </li>
-            </ul>
-        </nav>  
-
-					<div class="clearfix"></div>
-					<div class="text-center">
-						{!! $movie->links() !!}
-</div>         
+        <div class="clearfix"></div>        
 @endsection

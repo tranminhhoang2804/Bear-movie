@@ -4,9 +4,9 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">   
-            <table class="table container">
+            <table class="table table-responsive" id="tablephim">
                   <thead>
-                    <tr>
+                    <tr class="bg-info">
                       <th scope="col">#</th>
                       <th scope="col">Tên phim</th>
                       <th scope="col">Hình ảnh</th>

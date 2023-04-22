@@ -1,12 +1,12 @@
 @extends('layout')
 @section('content')
-
+@include('pages.include.banner')
 <!-- phim sap chieu -->
             <div class="col-xs-12 movie-by-cate container">
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
                       <a href="#" title="Phim Chiếu Rạp">
-                      <span class="fw-bolder text-warning h5">Phim hot</span>
+                      <span class="fw-bolder text-dark h5">PHIM HOT</span>
                       </a>
                    </div>               		
 	               		<div class="halim-box row">
@@ -61,7 +61,7 @@
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
                       <a href="#" title="Phim Chiếu Rạp">
-                      <span class="fw-bolder text-warning h5">{{$cate_home->title}}</span>
+                      <span class="fw-bolder text-dark h5">{{$cate_home->title}}</span>
                       </a>
                    </div>               		
 	               		<div class="halim-box row">
