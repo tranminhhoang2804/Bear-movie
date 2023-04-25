@@ -69,7 +69,7 @@
                                  Đang cập nhật
                               @endif
                         @else
-                           Phim lẻ
+                           Phim lẻ -
                            @if($episode_current_list_count==$movie->sotap)
                                  Hoàn thành
                               @else

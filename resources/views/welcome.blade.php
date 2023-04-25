@@ -110,7 +110,7 @@
             </div>
             <!-- end section-first -->
             <!-- footer -->
-            <div class="footer bg-black">
+            <div class="footer bg-black p-2">
                 <div class="dowload-mobile d-flex justify-content-start container">
                     <div class="row col-8 text-center">
                         <div class="col-2">

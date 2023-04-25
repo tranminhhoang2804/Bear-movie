@@ -21,6 +21,9 @@ class CheckRole
                    if(Auth::user()->role == 1){
                     return $next($request);
                     }
+                    else if (Auth::user()->role == 2) {
+                        return $next($request);
+                    }
                     return redirect()->route('homepage');
         }
     }

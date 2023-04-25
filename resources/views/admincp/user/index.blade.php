@@ -14,15 +14,18 @@
                   </thead>
                   <tbody>
                     @foreach($list as $key => $users)
-                    @if($users->role==2)
                     <tr>
                       <th scope="row">{{$key}}</th>
                       <td>{{$users->name}}</td>
                       <td>{{$users->email}}</td>
                       <td>{{$users->phone}}</td>
                       <td>
-                        @if($users->role)
+                        @if($users->role==3)
                         Khách Hàng
+                        @elseif($users->role==2)
+                        Quản lý hệ thống
+                        @elseif($users->role==1)
+                        Quản trị viên
                         @endif
                       </td>
                       <td>
@@ -37,7 +40,6 @@
                           <a href="{{route('user.edit',$users->id)}}" class="btn btn-warning">Sửa</a>
                       </td>
                     </tr>
-                    @endif
                     @endforeach
                   </tbody>
             </table>

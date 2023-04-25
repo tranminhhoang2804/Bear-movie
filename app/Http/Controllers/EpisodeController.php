@@ -54,7 +54,7 @@ class EpisodeController extends Controller
         $ep->save();
         }
         toastr()->success('Thành công!','Thêm tập phim thành công!');
-        return redirect()->back();
+        return redirect()->route('episode.index');
     }
 
     public function add_episode($id){

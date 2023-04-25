@@ -33,12 +33,12 @@
 
                     @if(isset($episode))
                     <div class="form-group">
-                        {!! Form::label('episode','Tap phim',[]) !!}
+                        {!! Form::label('episode','Tập phim',[]) !!}
                         {!! Form::text('episode', isset($episode) ? $episode->episode : '', ['class'=>'form-control','placeholder'=>'Nhập vào dữ liệu', isset($episode) ? 'readonly' : '']) !!}
                     </div>
                     @else
                     <div class="form-group">
-                        {!! Form::label('episode','Tap phim',[]) !!}
+                        {!! Form::label('episode','Tập phim',[]) !!}
                         <select name="episode" class="form-control" id="show_movie"></select>
                     </div>
                     @endif

@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('role','Quyền',[]) !!}
-                        {!! Form::select('role', ['1'=>'admin','2'=>'users'], isset($user) ? $user->role : '' , ['class'=>'form-control','required'=>'required']) !!}
+                        {!! Form::select('role', ['1'=>'superadmin','2'=>'admin','3'=>'nguoidung'], isset($user) ? $user->role : '' , ['class'=>'form-control','required'=>'required']) !!}
                     </div>
                     @if(!isset($user))
                         {!! Form::submit('Tạo người dùng', ['class'=>'btn btn-success']) !!}

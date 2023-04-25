@@ -78,7 +78,7 @@
                     </div>
                      <div class="form-group">
                         {!! Form::label('thuocphim','Thuoc the loai phim',[]) !!}
-                        {!! Form::select('thuocphim',['phimle'=>'Phim le','phimbo'=>'Phim bo'], isset($movie) ? $movie->thuocphim : '' , ['class'=>'form-control']) !!}
+                        {!! Form::select('thuocphim',['phimle'=>'Phim lẻ','phimbo'=>'Phim bộ'], isset($movie) ? $movie->thuocphim : '' , ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('Genre','Thể loại',[]) !!}<br>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('Image','Image',[]) !!}
-                        {!! Form::file('image', ['class'=>'form-control-file','required'=>'required']) !!}
+                        {!! Form::file('image', ['class'=>'form-control-file']) !!}
                         @if(isset($movie))
                             <img width="200px" src="{{asset('uploads/movie/'.$movie->image)}}">
                         @endif

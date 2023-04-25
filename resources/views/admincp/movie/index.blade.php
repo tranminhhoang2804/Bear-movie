@@ -10,7 +10,7 @@
                       <th scope="col">ID</th>
                       <th scope="col">Tên phim</th>
                        <th scope="col">Số tập phim</th>
-                      <th scope="col">Tập phim</th>
+                      <th scope="col">Thêm nhanh tập phim</th>
                       <th scope="col">Thời lượng phim</th>
                       <th scope="col">Hình ảnh</th>
                       <th scope="col">Phim nổi bật</th>
@@ -35,7 +35,11 @@
                       <th scope="row">{{$key}}</th>
                       <td>{{$cate->title}}</td>
                       <td>{{$cate->episode_count}}/{{$cate->sotap}} tập</td>
+                      @if($cate->thuocphim=="phimbo")
                       <td><a href="{{route('add-episode',[$cate->id])}}" class="btn btn-warning btn-sm">Thêm tập phim</a></td>
+                      @else
+                      <td><a href="{{route('episode.create')}}" class="btn btn-warning btn-sm">Thêm tập phim</a></td>
+                      @endif
                       <td>{{$cate->thoiluong}}</td>
                        <td><img width="200px" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
                        <td>
@@ -77,9 +81,9 @@
                       <td>{{$cate->category->title}}</td>
                       <td>
                           @if($cate->thuocphim=='phimle')
-                          Phim le
+                          Phim lẻ
                           @else
-                          Phim bo
+                          Phim bộ
                           @endif
                       </td>
                       <td>

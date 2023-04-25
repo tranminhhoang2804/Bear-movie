@@ -240,6 +240,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </li>
                           </ul>
                         </li>
+                        @if(Auth::user()->role == 1)
                         <li class="treeview">
                           <a href="#">
                             <i class="fa fa-laptop"></i>
@@ -255,6 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </li>
                           </ul>
                         </li>
+                        @endif
                       </ul>
                     </div>
                   </nav>
