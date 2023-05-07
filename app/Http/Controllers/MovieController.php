@@ -166,14 +166,15 @@ class MovieController extends Controller
             if(file_exists('uploads/movie/'.$movie->image)){
                 unlink('uploads/movie/'.$movie->image);
             }
-            else{
+            
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $new_image = $name_image.rand(0,9999).'.'.$get_image->getClientOriginalExtension();
             $get_image->move('uploads/movie/',$new_image);
             $movie->image = $new_image;
-            }
+            
         }
+        
         $movie->save();
         //them nhieu the loai cho phim
         $movie->movie_genre()->sync($data['genre']);

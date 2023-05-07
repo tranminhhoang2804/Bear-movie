@@ -104,7 +104,7 @@ class EpisodeController extends Controller
         $ep->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $ep->save();
         toastr()->success('Thành công!','Cập nhật tập phim thành công!');
-        return redirect()->to('episode');
+        return redirect()->to('episode.index');
     }
 
     /**

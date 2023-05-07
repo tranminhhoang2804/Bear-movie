@@ -637,6 +637,9 @@ ul.dropdown-menu li {
 .header-left span.blue1{
 	background-color: #ffc168;
 }
+.movie-table {
+  font-size: 14px;
+}
 i.icon_1{
   float: left;
   color: #00aced;

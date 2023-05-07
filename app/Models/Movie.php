@@ -24,4 +24,7 @@ class Movie extends Model
     public function episode(){
         return $this->hasMany(Episode::class);
     }
+    public function comments(){
+        return $this->hasMany(Comment::class, 'movie_id','id');
+    }
 }

@@ -95,14 +95,15 @@ class BannerController extends Controller
             if(file_exists('uploads/banner/'.$banner->image)){
                 unlink('uploads/banner/'.$banner->image);
             }
-            else{
+            
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $new_image = $name_image.rand(0,9999).'.'.$get_image->getClientOriginalExtension();
             $get_image->move('uploads/banner/',$new_image);
             $banner->image = $new_image;
-            }
+            
         }
+        
         $banner->description=$data['description'];
         $banner->status=$data['status'];
         $banner->save();

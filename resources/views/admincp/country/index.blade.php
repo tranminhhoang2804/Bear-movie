@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-            <table class="table table-responsive" id="tablephim">
+<div class="container-fluid">
+        <div class="table-responsive movie-table">
+            <table class="table" id="tablephim">
                   <thead>
                     <tr class="bg-info">
                       <th scope="col">ID</th>
@@ -41,4 +43,6 @@
                     @endforeach
                   </tbody>
             </table>
+          </div>
+        </div>
 @endsection

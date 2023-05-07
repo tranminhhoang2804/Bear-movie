@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <table class="table table-responsive" id="tablephim">
+        <div class="table-responsive movie-table">
+            <table class="table" id="tablephim">
                   <thead>
                     <tr class="bg-info">
                       <th scope="col">ID</th>
@@ -41,7 +40,7 @@
                       <td><a href="{{route('episode.create')}}" class="btn btn-warning btn-sm">Thêm tập phim</a></td>
                       @endif
                       <td>{{$cate->thoiluong}}</td>
-                       <td><img width="200px" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
+                       <td><img width="100%" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
                        <td>
                           @if($cate->phim_hot==0)
                             Không
@@ -118,6 +117,5 @@
                   </tbody>
             </table>
         </div>
-    </div>
 </div>
 @endsection

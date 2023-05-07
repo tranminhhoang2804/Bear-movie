@@ -2,7 +2,7 @@
 @section('content')
 @include('pages.include.banner')
 <!-- phim sap chieu -->
-            <div class="col-xs-12 movie-by-cate container">
+            <div class="col-sm-12 movie-by-cate container">
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
                       <a href="#" title="Phim Chiếu Rạp">
@@ -11,10 +11,10 @@
                    </div>               		
 	               		<div class="halim-box row">
 	                    	@foreach($phimhot as $key => $hot)
-	                        <article class="col-md-2 col-sm-4 col-xs-6">
+	                        <article class="col-md-3 col-sm-6 col-lg-2">
 	                            <div class="halim-item">
 	                            <a class="halim-thumb" href="{{route('movie',$hot->slug)}}">
-	                                <figure><img class="lazy card-img-top" height="280em" src="{{asset('uploads/movie/'.$hot->image)}}" title="{{$hot->title}}"></figure>
+	                                <figure><img class="lazy card-img-top" height="100%" src="{{asset('uploads/movie/'.$hot->image)}}" title="{{$hot->title}}"></figure>
 	                                <span class="status">
 	                               	@if($hot->resolution==0)
 				                            HD
@@ -66,10 +66,10 @@
                    </div>               		
 	               		<div class="halim-box row">
 	                    	@foreach($cate_home->movie->take(12) as $key => $mov)
-	                        <article class="col-md-2 col-sm-4 col-xs-6">
+	                        <article class="col-md-3 col-sm-6 col-lg-2">
 	                            <div class="halim-item">
 	                            <a class="halim-thumb" href="{{route('movie',$mov->slug)}}">
-	                                <figure><img class="lazy card-img-top" height="280em" src="{{asset('uploads/movie/'.$mov->image)}}" title="{{$mov->title}}"></figure>
+	                                <figure><img class="lazy card-img-top" height="100%" src="{{asset('uploads/movie/'.$mov->image)}}" title="{{$mov->title}}"></figure>
 	                                <span class="status">
 	                               	@if($mov->resolution==0)
 				                            HD

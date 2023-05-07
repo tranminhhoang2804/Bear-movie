@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-12">   
-            <table class="table table-responsive" id="tablephim">
+        <div class="table-responsive movie-table">   
+            <table class="table" id="tablephim">
                   <thead>
                     <tr class="bg-info">
                       <th scope="col">#</th>
@@ -20,7 +19,7 @@
                     <tr>
                       <th scope="row">{{$key}}</th>
                       <td>{{$episode->movie->title}}</td>
-                       <td><img width="200px" src="{{asset('uploads/movie/'.$episode->movie->image)}}"></td>
+                       <td><img width="50%" src="{{asset('uploads/movie/'.$episode->movie->image)}}"></td>
                       <td>{{$episode->episode}}</td>
                       <!-- <td>{!! $episode->linkphim !!}</td> -->
                       <td>{{ $episode->linkphim }}</td>
@@ -40,6 +39,5 @@
                   </tbody>
             </table>
         </div>
-    </div>
 </div>
 @endsection

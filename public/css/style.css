@@ -4,6 +4,9 @@
 .bear-logo {
     width: 30%;
 }
+.name-web {
+    font-size: 28px;
+}
 .movie-header {
     background-color: #008569;
 }
@@ -16,6 +19,16 @@
     transition: all 0.5s;
     background-color: #00d1a5;
 }
+
+.button-login,.start-button, .register-button {
+    background-color: #d1f1f8;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.button-login:hover {
+    background-color: #aad1da;
+}
+
 .card-image {
     width: 25%;
 }
@@ -62,6 +75,38 @@
     background-color: #93fde7;
     color: black;
 }
+
+.dropdown-user {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-user {
+    list-style: none;
+    display: none;
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-color: #ffffff76;
+    padding: 10px 5px;
+    z-index: 1;
+    border-radius: 8px;
+  }
+
+  .dropdown-content-user a {
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+
+.dropdown-user:hover .dropdown-content-user {
+    display: block;
+}
+.dashboard-button {
+    margin-bottom: 10px;
+}
+
 .visible-xs-inline {
     text-decoration: none;
 }
@@ -89,13 +134,13 @@
 .hot-movie {
     margin: 0 auto;
 }
-.button-watch {
-    border-bottom: 2px solid #ffffff23;
-}
+
 /* ---------------------------------------- */
-.movie-button {
+.movie-button, .trailer-button {
     text-decoration: none;
-    border-radius: 7px;
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 14px;
 }
 /* ---------------------------------------- */
 .halim-item:hover {
@@ -111,6 +156,7 @@
     left: 0;
     top: 0;
     background: #365979;
+    border-radius: 8px;
     /* z-index: 1; */
 }
 .quality {
@@ -126,6 +172,7 @@
     background: #f11b1b;
     color: #fff;
     padding: 2px 5px;
+    border-radius: 8px;
     /* z-index: 9; */
 }
 .movie-episode {
@@ -177,6 +224,7 @@
 }
 .halim-episode{
     list-style: none;
+    font-size: 14px;
 }
 .section-heading a {
     text-decoration: none;
@@ -296,9 +344,14 @@ ul.dropdown-menu.drp-mnu li {
     margin: 10rem;
 }
 .title-text {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #fff;
+}
+.sub-title {
+    font-size: 14px;
+    text-decoration: none;
+    color: #ffffff;
 }
 .section-first {
     height: 35rem;
@@ -314,7 +367,7 @@ ul.dropdown-menu.drp-mnu li {
 }
 .modal-description {
     height: 75%;
-    overflow: auto;
+    overflow-y: scroll;
     text-align: justify;
 }
 @keyframes scaling {
@@ -332,6 +385,12 @@ ul.dropdown-menu.drp-mnu li {
 }
 .register-button:hover {
     transform: scale(1.1);
+}
+.comment-show {
+    background-color: #37af9c;
+    border-radius: 8px;
+    max-height: 500px;
+    overflow-y: auto;
 }
 /* ------------------------------------------- */
 .bear-footer {
@@ -356,4 +415,211 @@ ul.dropdown-menu.drp-mnu li {
 }
 .copyright p {
     font-size: smaller;
+}
+
+/* responsive */
+@media (max-width: 767px) {
+    .bear-logo {
+        width: 30%;
+    }
+    .bear-logo-home {
+        width: 15%;
+    }
+    .name-web {
+        font-size: 18px;
+    }
+    .logo-name {
+        font-size: 14px;
+    }
+    .seacrh-button {
+        font-size: 12px;
+    }
+    .title-text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fff;
+    }
+    .modal-description {
+    height: 150px;
+    }
+    .movie-detail-text {
+        font-size: 10px;
+    }
+    .quality {
+        color: #fff;
+        background: #365979;
+        padding: 2px 5px;
+        font-size: 10px;
+        border-radius: 5px;
+        }
+        .movie-episode {
+        font-size: 10px;
+        background: #f11b1b;
+        color: #fff;
+        padding: 2px 5px;
+        border-radius: 5px;
+        /* z-index: 9; */
+        }
+        .movie-button {
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 10px;
+            background-color: #d50b00;    
+            }
+        .trailer-button {
+                border-radius: 5px;
+                font-size: 10px;
+                background-color: #333333;
+            }
+        .movie-title {
+                font-size: 14px;
+            }
+        .movie-name-eng, .item-text{
+                font-size: 12px;
+            }
+        .sub-title {
+            font-size: 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .halim-episode{
+            list-style: none;
+            font-size: 10px;
+        }
+        .button-watch {
+            font-size: 8px;
+        }
+        
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar-web {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .bear-logo {
+        width: 40%;
+    }
+    .bear-logo-home {
+        width: 12%;
+    }
+    .logo-name {
+        font-size: 20px;
+    }
+    .name-web {
+        font-size: 20px;
+    }
+    .modal-description {
+    height: 200px;
+    }
+    .movie-detail-text {
+        font-size: 12px;
+    }
+    .quality {
+    color: #fff;
+    background: #365979;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    }
+    .movie-episode {
+    font-size: 12px;
+    background: #f11b1b;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 5px;
+    /* z-index: 9; */
+    }
+    .movie-button {
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: #d50b00;    
+    }
+    .trailer-button {
+        border-radius: 5px;
+        font-size: 12px;
+        background-color: #333333;
+    }
+    .sub-title {
+        font-size: 12px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+    .halim-episode{
+        list-style: none;
+        font-size: 12px;
+    }
+    .button-watch {
+        font-size: 12px;
+    }
+}
+@media (max-width: 991px) {
+    .movie-poster {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .movie-thumb {
+        width: 40%;
+    }
+    .film-title {
+        padding-bottom: 5px;
+    }
+    .movie-title {
+        font-size: 16px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bear-logo-home {
+        width: 40%;
+    }
+    .logo-name {
+        font-size: 22px;
+    }
+    .name-web {
+        font-size: 24px;
+    }
+    .movie-thumb {
+        width: 13rem;
+    }
+    .movie-title {
+        font-size: 18px;
+    }
+    .movie-name-eng, .item-text {
+        font-size: 14px;
+    }
+    .movie-detail-text {
+        font-size: 13px;
+    }
+    .movie-button {
+    text-decoration: none;
+    background-color: #d50b00;
+    }
+    .trailer-button {
+        background-color: #333333;
+    }
+    .button-watch {
+        font-size: 14px;
+    }
+}
+@media (min-width: 1200px) {
+    .movie-thumb {
+        width: 17rem;
+    }
+    .bear-logo-home {
+        width: 40%;
+    }
+    .logo-name {
+        font-size: 28px;
+    }
+    .movie-title {
+        font-size: 24px;
+    }
+    .movie-button {
+        background-color: #d50b00;
+    }
+    .trailer-button {
+        background-color: #333333;
+    }
 }

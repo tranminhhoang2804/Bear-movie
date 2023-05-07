@@ -19,14 +19,12 @@
             
             
             <div class="section">
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand">
                     <div class="container">
-                        <a class="navbar-brand col-3" href="home.html"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie"><img class="bear-footer" src="{{asset('img/bear-footer.png')}}" title="Bear movie"></a>
-                        <ul class="navbar-nav d-flex justify-content-end col-2">
-                            <li class="nav-item">
-                                <a class="nav-link bg-warning rounded fw-bold text-dark ps-4 pe-4" href="{{route('login')}}">Đăng nhập</a>
-                            </li>
-                        </ul>
+                        <a class="navbar-brand col-lg-3"><img class="bear-logo-home" src="{{asset('img/logo.png')}}" title="Bear movie"> <span class="fw-bold text-light name-web">BEAR MOVIE</span></a>
+                        <div class="col-3 d-flex justify-content-end">
+                        <a class="fw-bold text-dark button-login p-2" href="{{route('login')}}">Đăng nhập</a>
+                        </div>
                     </div>
                 </nav>
                 <div class="clearfix"></div>
@@ -36,7 +34,7 @@
                 <p class="h4 text-center text-light">Bạn đã sẵn sàng chưa?</p>
                 <p class="h4 d-flex justify-content-center mt-5">
                     @if (Route::has('register'))
-                    <a class="button btn-submit start-button text-decoration-none bg-warning rounded fw-bold text-dark pe-5 ps-5 pt-3 pb-3" href="{{ route('register') }}">Bắt đầu</a>
+                    <a class="button btn-submit start-button text-decoration-none rounded fw-bold text-dark pe-5 ps-5 pt-3 pb-3" href="{{ route('register') }}">Bắt đầu ngay</a>
                     @endif
                 
                 </p>
@@ -105,7 +103,7 @@
                       </div>
                   </div>
                   <div class="container d-flex justify-content-center">
-                  <a class="button btn-submit register-button text-decoration-none bg-warning rounded fw-bold text-dark pe-5 ps-5 pt-3 pb-3" href="{{ route('register') }}">Đăng ký ngay</a>
+                  <a class="button btn-submit register-button text-decoration-none rounded fw-bold text-dark pe-5 ps-5 pt-3 pb-3" href="{{ route('register') }}">Đăng ký ngay</a>
                 </div>
             </div>
             <!-- end section-first -->

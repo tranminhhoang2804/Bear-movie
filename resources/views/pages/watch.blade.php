@@ -65,7 +65,11 @@
                       </div>
                    </a>
                    <div class="title-wrapper-xem p-3">
-                      <p class="h4"><a href="#" title="{{$movie->title}}" class="text-dark fw-bold movie-title">{{$movie->title}}</a></h1>
+                     @if ($movie->thuocphim=='phimbo')
+                      <p class="h4"><a href="#" title="{{$movie->title}}" class="text-dark fw-bold movie-title">{{$movie->title}} - tập {{$episode->episode}}</a></h1>
+                        @else
+                        <p class="h4"><a href="#" title="{{$movie->title}}" class="text-dark fw-bold movie-title">{{$movie->title}}</a></h1>
+                        @endif
                    </div>
                 </div>
                 <div class="entry-content htmlwrap clearfix collapse" id="expand-post-content">
@@ -78,7 +82,7 @@
 
                 <div id="halim-list-server">
                    <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active sub-title server-1 ps-3 pe-3 pt-1 pb-1"><a class="movie-title text-light fw-bold" href="#server-0" aria-controls="server-0" role="tab" data-toggle="tab"><i class="hl-server"></i>
+                      <li role="presentation" class="active sub-title server-1 ps-3 pe-3 pt-1 pb-1"><a class="sub-title" href="#server-0" aria-controls="server-0" role="tab" data-toggle="tab"><i class="hl-server"></i>
                                     @if($movie->phude==0)
                                         Vietsub
                                     @else
@@ -116,6 +120,71 @@
           </div>
           </section>
        </main>
+       <div class="section-container container">
+                        <div class="section-bar border-bottom">
+                           <p class="section-title h5"><span class="text-light fw-bold">NỘI DUNG PHIM</span></p>
+                        </div>
+                        <div class="entry-content htmlwrap">
+                           <div class="video-item halim-entry-box p-3">
+                              <article class="item-content item-text text-light" style="text-align: justify;">
+   						            {{$movie->description}}
+   						         </article>
+                           </div>
+                        </div>
+                     </div>
+       <!-- phim sap chieu -->
+            <div class="col-sm-12 movie-by-cate container">
+                <section id="halim-advanced-widget-4">
+                   <div class="section-heading mt-2 mb-2 p-2">
+                      <a href="#" title="Phim Chiếu Rạp">
+                      <span class="fw-bolder text-dark h5">Phim mới cập nhật</span>
+                      </a>
+                   </div>                    
+                        <div class="halim-box row">
+                        @foreach($phimhot as $key => $hot)
+                           <article class="col-md-3 col-sm-6 col-lg-2">
+                               <div class="halim-item">
+                               <a class="halim-thumb" href="{{route('movie',$hot->slug)}}">
+                                   <figure><img class="lazy card-img-top" height="100%" src="{{asset('uploads/movie/'.$hot->image)}}" title="{{$hot->title}}"></figure>
+                                   <span class="status">
+                                    @if($hot->resolution==0)
+                                        HD
+                                    @elseif($hot->resolution==1)
+                                        SD
+                                    @elseif($hot->resolution==2)
+                                        HDCam
+                                    @elseif($hot->resolution==3)
+                                        Cam
+                                    @elseif($hot->resolution==4)
+                                        FullHD
+                                    @else
+                                        Trailer
+                                    @endif
+                                   </span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
+                                    {{$hot->episode_count}}/{{$hot->sotap}} |
+                                   @if($hot->phude==0)
+                                        Vietsub
+                                    @else
+                                        Thuyết minh
+                                    @endif
+                                </span> 
+                                   <div class="icon_overlay"></div>
+                                   <div class="halim-post-title-box">
+                                       <div class="halim-post-title ">
+                                           <p class="card-title card-name fw-bold text-light">{{$hot->title}}</p>
+                                           <p class="original_title card-name fst-italic text-light">{{$hot->name_eng}}</p>
+                                       </div>
+                                   </div>
+                               </a>
+                               </div>
+                           </article>
+                           @endforeach
+                       </div>
+                  
+                </section>
+            </div>
+             
+<!-- end -->
     </div>
     </div>
 @endsection

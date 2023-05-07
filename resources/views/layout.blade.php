@@ -20,46 +20,45 @@
             <!-- header -->
             <nav class="navbar navbar-expand-lg movie-header">
                 <div class="container">
-                    <a class="navbar-brand col-3 fw-bold text-light" href="{{route('homepage')}}"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie">BEAR MOVIE</a>
+                    <a class="navbar-brand col-3 fw-bold text-light" href="{{route('homepage')}}"><img class="bear-logo" src="{{asset('img/logo.png')}}" title="Bear movie"><span class="logo-name">BEAR MOVIE</span></a>
                     <form class="d-flex col-5 gap-2" action="{{route('tim-kiem')}}" method="GET">
                         <input class="form-control" type="text" name="search" id="timkiem" placeholder="Tìm kiếm" autocomplete="off">
                         <button class="seacrh-button text-dark fw-bold">Search</button>
                     </form>
-                    <ul class="navbar-nav d-flex justify-content-end col-2 gap-2">
-                        <li class="nav-item dropdown">
+                    <ul class="navbar-nav d-flex justify-content-end col-lg-2 col-sm-3 col-md-2 gap-2">
+                        <li class="nav-item dropdown-user">
                             @if (Auth::user()->role==1)
-                             <button class="btn btn-danger fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{Auth::user()->name}}
-                            </button>
-                            <ul class="dropdown-content text-center">
-                                <li>
-                                    <a class="fw-bold" href="{{route('home')}}">Dashboard</a>
-                                </li>
-                                <li>
-                                     <form action="{{route('logout')}}" method="POST">
-                                        @csrf
-                                        <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
-                                    </form>
-                                </li>
-                            </ul>
-                             @else
-                             <button class="btn btn-light fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{Auth::user()->name}}
-                            </button>
-                            <ul class="dropdown-content text-center">
-                                <li>
-                                     <form action="{{route('logout')}}" method="POST">
-                                        @csrf
-                                        <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
-                                    </form>
-                                </li>
-                            </ul>
+                                <button class="btn btn-danger fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{Auth::user()->name}}
+                                </button>
+                                <ul class="dropdown-content-user text-center">
+                                    <li>
+                                        <a class="fw-bold btn btn-warning text-light dashboard-button" href="{{route('home')}}">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <form action="{{route('logout')}}" method="POST">
+                                            @csrf
+                                            <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
+                                        </form>
+                                    </li>
+                                </ul>
+                            @else
+                                <button class="btn btn-light fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{Auth::user()->name}}
+                                </button>
+                                <ul class="dropdown-content-user text-center">
+                                    <li>
+                                        <form action="{{route('logout')}}" method="POST">
+                                            @csrf
+                                            <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
+                                        </form>
+                                    </li>
+                                </ul>
                             @endif 
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div class="clearfix"></div>
             <!-- end-header -->
 
             <!-- menu -->
@@ -67,40 +66,40 @@
                 <ul class="nav justify-content-center">
                 	@foreach($category as $key => $cate)
 	                    <li class="nav-item">
-	                    <a class="nav-link text-dark fw-bold link-button" title="{{$cate->title}}" href="{{route('category',$cate->slug)}}">{{$cate->title}}</a>
+	                       <a class="nav-link text-dark fw-bold link-button" title="{{$cate->title}}" href="{{route('category',$cate->slug)}}">{{$cate->title}}</a>
 	                    </li>
                    	@endforeach
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thể loại</a>
-                        <ul class="dropdown-content">
-                        	@foreach($genre as $key => $gen)
-                        		<li>
-                        			<a class="dropdown-title" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
-                        		</li>
-                        	@endforeach
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quốc gia</a>
-                        <ul class="dropdown-content">
-                        	@foreach($country as $key => $count)
-                                <li>
-                                    <a class="dropdown-title" title="{{$count->title}}" href="{{route('country',$count->slug)}}">{{$count->title}}</a>
-                                </li>
-                        	@endforeach
-                     
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Năm</a>
-                        <ul class="dropdown-content">
-                        	@for($year=2000; $year<=2023;$year++)
-                        		<li>
-                                    <a class="dropdown-title" title="{{$year}}" href="{{url('nam/'.$year)}}">{{$year}}</a>
-                                </li>
-                   			@endfor
-                        </ul>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thể loại</a>
+                            <ul class="dropdown-content">
+                            	@foreach($genre as $key => $gen)
+                            		<li>
+                            			<a class="dropdown-title" title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a>
+                            		</li>
+                            	@endforeach
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quốc gia</a>
+                            <ul class="dropdown-content">
+                            	@foreach($country as $key => $count)
+                                    <li>
+                                        <a class="dropdown-title" title="{{$count->title}}" href="{{route('country',$count->slug)}}">{{$count->title}}</a>
+                                    </li>
+                            	@endforeach
+                         
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark fw-bold link-button" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Năm</a>
+                            <ul class="dropdown-content">
+                            	@for($year=2000; $year<=2023;$year++)
+                            		<li>
+                                        <a class="dropdown-title" title="{{$year}}" href="{{url('nam/'.$year)}}">{{$year}}</a>
+                                    </li>
+                       			@endfor
+                            </ul>
+                        </li>
                 </ul>
             </div>
             <!-- end-menu -->

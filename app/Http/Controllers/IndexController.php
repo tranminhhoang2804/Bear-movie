@@ -104,6 +104,7 @@ class IndexController extends Controller
         $category = Category::orderBy('id','DESC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
+        $phimhot = Movie::withCount('episode')->where('phim_hot',1)->where('status',1)->orderBy('ngaycapnhat','DESC')->get();
         $movie = Movie::with('category','genre','episode','country','movie_genre')->where('slug',$slug)->where('status',1)->first();
         
         if(isset($tap)){
@@ -115,7 +116,7 @@ class IndexController extends Controller
             $episode = Episode::where('movie_id',$movie->id)->where('episode',$tapphim)->first();
         }
 
-        return view('pages.watch', compact('category','genre','country','movie','episode','tap','tapphim'));
+        return view('pages.watch', compact('category','genre','country','movie','episode','tap','tapphim','phimhot'));
     }
     public function episode(){
         return view('pages.episode');

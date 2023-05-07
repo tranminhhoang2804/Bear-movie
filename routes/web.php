@@ -11,7 +11,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\EpisodeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
-
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +38,8 @@ Route::get('/nam/{year}',[IndexController::class, 'year']);
 Route::get('/tag/{tag}',[IndexController::class, 'tag']);
 Route::get('/tim-kiem',[IndexController::class,'timkiem'])->name('tim-kiem');
 
+Route::post('comments',[CommentController::class, 'store']);
+
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -49,6 +51,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('add-episode/{id}', [EpisodeController::class,'add_episode'])->name('add-episode');
     Route::resource('episode', EpisodeController::class);
     Route::get('select-movie', [EpisodeController::class,'select_movie'])->name('select-movie');
+    Route::get('comments-list', [CommentController::class,'index'])->name('comments-list');
+    Route::resource('comment',CommentController::class);
     Route::resource('movie', MovieController::class);
     Route::resource('banner', BannerController::class);
     Route::get('/update-year-phim',[MovieController::class, 'update_year']);
