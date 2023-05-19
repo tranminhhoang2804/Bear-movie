@@ -5,7 +5,7 @@
             <div class="col-sm-12 movie-by-cate container">
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
-                      <a href="#" title="Phim Chiếu Rạp">
+                      <a title="Phim Hot">
                       <span class="fw-bolder text-dark h5">PHIM HOT</span>
                       </a>
                    </div>               		
@@ -60,7 +60,7 @@
             <div class="col-xs-12 movie-by-cate container">
                 <section id="halim-advanced-widget-4">
                    <div class="section-heading mt-2 mb-2 p-2">
-                      <a href="#" title="Phim Chiếu Rạp">
+                      <a title="Phim theo danh mục">
                       <span class="fw-bolder text-dark h5">{{$cate_home->title}}</span>
                       </a>
                    </div>               		

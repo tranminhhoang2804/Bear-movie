@@ -42,6 +42,21 @@
                                         </form>
                                     </li>
                                 </ul>
+                            @elseif (Auth::user()->role==2)
+                                <button class="btn btn-danger fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{Auth::user()->name}}
+                                </button>
+                                <ul class="dropdown-content-user text-center">
+                                    <li>
+                                        <a class="fw-bold btn btn-warning text-light dashboard-button" href="{{route('home')}}">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <form action="{{route('logout')}}" method="POST">
+                                            @csrf
+                                            <input type="submit" class="btn btn-danger btn-sm" style="padding: 5px 20px;" value="logout" />
+                                        </form>
+                                    </li>
+                                </ul>
                             @else
                                 <button class="btn btn-light fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{Auth::user()->name}}

@@ -4,15 +4,15 @@
 <div class="panel-heading container p-2">
             <div class="row">
             <div class="col-xs-6">
-                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light"><a class="panel-heading-title text-light fw-bold" href="">{{$search}}</a></span></span></div>
+                <div class="yoast_breadcrumb hidden-xs"><span><span class="text-light"><a class="panel-heading-title text-light fw-bold" href="">Phim tìm kiếm: {{$search}}</a></span></span></div>
             </div>
             </div>
         </div>
         <div class="col-xs-12 movie-by-cate container">
             <section id="halim-advanced-widget-4">
                <div class="section-heading mt-2 mb-2 p-2">
-                  <a href="#" title="Phim Chiếu Rạp">
-                  <span class="fw-bolder text-warning">{{$search}}</span>
+                  <a title="Phim tìm kiếm">
+                  <span class="fw-bolder text-dark">Từ khóa: {{$search}}</span>
                   </a>
                </div>
                 <div class="halim-box row">
